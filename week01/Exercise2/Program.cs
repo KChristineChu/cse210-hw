@@ -39,7 +39,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Sorry, you did not pass. Please try hard.");
+            Console.WriteLine("Sorry, you did not pass. Please try harder.");
         }
     }
     
