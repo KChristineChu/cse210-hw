@@ -10,25 +10,32 @@ class Program
 
         if (percentage >= 90)
         {
-            Console.Write("A");
+            Console.WriteLine("A");
         }
         else if (percentage >= 80)
         {
-            Console.Write("B");
+            Console.WriteLine("B");
         }
         else if (percentage >= 70)
         {
-            Console.Write("C");
+            Console.WriteLine("C");
         }
         else if (percentage >= 60)
         {
-            Console.Write("D");
+            Console.WriteLine("D");
         }
         else 
         {
-            Console.Write("F");
+            Console.WriteLine("F");
         }
-
+        if (percentage >= 70)
+        {
+            Console.WriteLine("Congratulations! you passed.");
+        }
+        else
+        {
+            Console.WriteLine("Sorry, you did not pass. Please try hard.");
+        }
     }
     
 }
