@@ -5,17 +5,16 @@ class Program
     static void Main(string[] args)
     {
        Console.Write("What is the magic number? ");
-       string magicNum = Console.ReadLine();
-       int magicNumber = int.Parse(magicNum);
+       int magicNumber = int.Parse(Console.ReadLine());
+        
 
        int guess = -1;
 
        while(guess != magicNumber)
         {
             Console.Write("What is your guess? ");
-            string userInput = Console.ReadLine();
-            guess = int.Parse(userInput);
-            
+            guess = int.Parse(Console.ReadLine());
+                        
             if (guess < magicNumber)
             {
                 Console.WriteLine("Higher");
