@@ -32,9 +32,9 @@ class Program
         return number;
     } 
 
-    static int SquareNumber(int userNumber)
+    static int SquareNumber(int number)
     {
-        int squareNum = userNumber * userNumber;
+        int squareNum = UserNumber * UserNumber;
         return squareNum;
     }   
 }
