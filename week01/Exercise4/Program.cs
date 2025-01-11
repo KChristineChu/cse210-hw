@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 
 class Program
 {
@@ -12,7 +10,7 @@ class Program
        int number = -1;
        while (number != 0) 
        {
-            Console.Write("Enter a list of numbers, type 0 when finished. ");
+            Console.Write("Enter a number, type 0 when finished. ");
             
             number = int.Parse(Console.ReadLine()); 
 
@@ -40,7 +38,7 @@ class Program
             max = num;
 
         }
-        Console.Write($"The maximum number is: {max}");
+        Console.WriteLine($"The maximum number is: {max}");
 
 
     }
