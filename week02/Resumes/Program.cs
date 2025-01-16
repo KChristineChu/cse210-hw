@@ -24,6 +24,9 @@ class Program
         Resume resume1 = new Resume();
         resume1._name = "Allison Rose";
 
-        
+        resume1._jobs.Add(job1);
+        resume1._jobs.Add(job2);
+
+        resume1.Display();
     }
 }
