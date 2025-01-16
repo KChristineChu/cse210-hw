@@ -21,6 +21,9 @@ class Program
         job1.DisplayJobDetails();
         job2.DisplayJobDetails(); 
 
+        Resume resume1 = new Resume();
+        resume1._name = "Allison Rose";
+
         
     }
 }
