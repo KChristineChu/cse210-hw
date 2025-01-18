@@ -31,5 +31,6 @@ public class Journal
     public void LoadFromFile(string file)
     {
         
-    }  
+    }
+
 }

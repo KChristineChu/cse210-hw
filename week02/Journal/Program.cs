@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] args, string file)
     {
         Journal journal = new Journal();
 
@@ -31,14 +31,17 @@ class Program
             } 
             else if (userInput == "3")
             {
-                //Console.WriteLine("Save journal");
-                journal.SaveToFile();
+                Console.WriteLine("What is the filename? ");
+                string fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
             } 
             else if (userInput == "4")
             {
-                //Console.WriteLine("Load journal");
-                journal.LoadFromFile();
-            } 
+                Console.WriteLine("Enter the filename ");
+                string fileName = Console.ReadLine();
+                journal.LoadFromFile(fileName);
+
+                            } 
             else if (userInput == "5")
             {
                 return;
