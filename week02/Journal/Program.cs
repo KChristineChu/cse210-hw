@@ -1,54 +1,51 @@
-using System;
+ using System;
 
-class Program
+
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         Journal journal = new Journal();
-
-        while(true)
+ 
+        while (true)
         {
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display journal");
             Console.WriteLine("3. Save journal");
             Console.WriteLine("4. Load journal");
             Console.WriteLine("5. Quit");
-
+ 
             Console.Write("Enter selection: ");
             string userInput = Console.ReadLine();
-
-            //Console.WriteLine($"User selected {userInput}");
-
+ 
             if (userInput == "1")
             {
-                //Console.WriteLine("Write a new entry");
                 journal.AddEntry();
-            } 
+            }
             else if (userInput == "2")
             {
-                //Console.WriteLine("Display journal");
                 journal.DisplayAll();
-            } 
+            }
             else if (userInput == "3")
             {
-                Console.WriteLine("What is the filename? ");
-                string fileName = Console.ReadLine();
-                journal.SaveToFile(fileName);
-            } 
+                Console.Write("Enter the filename to save to: ");
+                string saveFileName = Console.ReadLine();
+                journal.SaveToFile(saveFileName);
+            }
             else if (userInput == "4")
             {
-                Console.WriteLine("Enter the filename ");
-                string fileName = Console.ReadLine();
-                journal.LoadFromFile(fileName);
-
-            } 
+                Console.Write("Enter the filename to load from: ");
+                string loadFileName = Console.ReadLine();
+                journal.LoadFromFile(loadFileName);
+            }
             else if (userInput == "5")
             {
-                return;
-            } 
+                Console.WriteLine("Goodbye!");
+                break; // Exit the loop
+            }
             else
             {
-                Console.WriteLine("Please try again.");
+                Console.WriteLine("Invalid selection. Please try again.");
             }
         }
     }

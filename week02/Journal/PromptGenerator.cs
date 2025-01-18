@@ -1,8 +1,8 @@
-using System;
+using System; 
 
-public class PromptGenerator
+public static class PromptGenerator
 {
-    private static List<string> _prompts = new List<string>
+    private static readonly List<string> Prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
@@ -10,11 +10,11 @@ public class PromptGenerator
         "What was the strongest emotion I felt today?",
         "If I had one thing I could do over today, what would it be?"
     };
-
-
-
+ 
     public static string GetRandomPrompt()
     {
-        return "";    
-    }    
+        var random = new Random();
+        return Prompts[random.Next(Prompts.Count)];
+    }
 }
+ 
