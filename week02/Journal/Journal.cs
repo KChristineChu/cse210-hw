@@ -8,7 +8,7 @@ public class Journal
     {
         string prompt = PromptGenerator.GetRandomPrompt();
         Console.WriteLine(prompt);
-        Console.Write("Write the text of your entry.");
+        Console.WriteLine("Write your entry: ");
         string entryText = Console.ReadLine();
         Entry entry = new(prompt, entryText);
         _entries.Add(entry);

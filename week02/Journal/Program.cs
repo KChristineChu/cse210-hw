@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static void Main(string[] args, string file)
+    static void Main(string[] args)
     {
         Journal journal = new Journal();
 
@@ -41,7 +41,7 @@ class Program
                 string fileName = Console.ReadLine();
                 journal.LoadFromFile(fileName);
 
-                            } 
+            } 
             else if (userInput == "5")
             {
                 return;

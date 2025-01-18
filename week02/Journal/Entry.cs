@@ -1,7 +1,7 @@
 using System;
 public class Entry(string promptText, string entryText)
 {
-    public string _date = new DateTime().ToString();
+    public string _date = DateTime.Now.Date.ToString("MM/dd/yyyy");
     public string _promptText = promptText;
     public string _entryText = entryText;
 
