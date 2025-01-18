@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new Journal();
+        //Journal journal = new Journal();
 
         while(true)
         {
@@ -17,25 +17,25 @@ class Program
             Console.Write("Enter selection: ");
             string userInput = Console.ReadLine();
 
-            Console.WriteLine($"User selected {userInput}");
+            //Console.WriteLine($"User selected {userInput}");
 
-            if(userInput == "1")
+            if (userInput == "1")
             {
                 Console.WriteLine("Write a new entry");
             } 
-            else if(userInput == "2")
+            else if (userInput == "2")
             {
                 Console.WriteLine("Display journal");
             } 
-            else if(userInput == "3")
+            else if (userInput == "3")
             {
                 Console.WriteLine("Save journal");
             } 
-            else if(userInput == "4")
+            else if (userInput == "4")
             {
                 Console.WriteLine("Load journal");
             } 
-            else if(userInput == "5")
+            else if (userInput == "5")
             {
                 return;
             } 
