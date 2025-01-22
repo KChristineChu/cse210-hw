@@ -1,5 +1,6 @@
 using System;
 
+namespace Fractions;
 public class Fraction
 {
     private int _topNum;
@@ -32,7 +33,7 @@ public class Fraction
 
     public double GetDecimalValue()
     {
-        double value = _topNum / _bottomNum;
-        return value;
+        return (double)_topNum / (double)_bottomNum;
+        
     }
 }
