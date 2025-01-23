@@ -13,9 +13,9 @@ public class Fraction
         _bottomNum = 1;
     }
 
-    public Fraction(int top)
+    public Fraction(int wholeNumber)
     {
-        _topNum = top;
+        _topNum = wholeNumber;
         _bottomNum = 1;
     }
 
