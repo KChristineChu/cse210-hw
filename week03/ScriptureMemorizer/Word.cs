@@ -27,6 +27,7 @@ public class Word
     }
     public string GetDisplayText()
     {
+        //return the word if visible or return underscores _____ if hidden
         return _text;
 
     }
