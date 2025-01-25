@@ -7,7 +7,7 @@ class Program
         //Word word = new Word();
         //Console.WriteLine(word.GetDisplayText());
 
-        Reference reference = new Reference("John", 3, 16);
+        Reference reference = new Reference("John", 3, 16, 17);
         Scripture scripture = new Scripture(reference, "For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.");
 
         //loop 

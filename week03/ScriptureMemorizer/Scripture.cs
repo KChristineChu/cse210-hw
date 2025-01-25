@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 public class Scripture
 {
     private Reference _reference;   //scripture reference e.g. Proverbs..
@@ -15,29 +17,43 @@ public class Scripture
         //string name = "";
         _reference = reference;
 
-        string[] words = text.Split();
+        //string[] words = text.Split();
         //foreach (string word in words)
         //Console.Write(word);
-    
 
+        _words = text.Split(' ')
+                     .Select(word => new Word(word))
+                     .ToList();
     }
+
     public void HideRandomWords(int numberToHide)
     {
-        //hardest -set the state of a randomly selected group of words to be hidden
+        //set the state of a randomly selected group of words to be hidden
         //need to find a set of visible words
         //need to randomly select 'numberToHide' of those words e.g. loops...
         //use the Hide function
+        List<Word> visibleWords = _words.Where(word => !word.IsHidden()).ToList();
+        Random random = new Random();
+        int wordsToHide = Math.Min(numberToHide, visibleWords.Count);
+        
+        for (int i = 0; i < wordsToHide; i++)
+        {
+            int index = random.Next(visibleWords.Count);
+            visibleWords[index].Hide();
+            visibleWords.RemoveAt(index);
+        }
+
     }
     public string GetDisplayText()
     {
         //display Reference, all the Words
         //e.g. string text = "abc" + "def";
-        
-
+        string scriptureText = string.Join(" ", _words.Select(word => word.GetDisplayText()));
+        return $"{_reference.GetDisplayText()} - {scriptureText}";
     }
     public bool IsCompletelyHidden()
     {
-        return false;
+        return _words.All(word => word.IsHidden());
 
     }
 }
