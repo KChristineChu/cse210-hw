@@ -8,7 +8,7 @@ class Program
         //Console.WriteLine(word.GetDisplayText());
 
         Reference reference = new Reference("John", 3, 16, 17);
-        Scripture scripture = new Scripture(reference, "For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.");
+        Scripture scripture = new Scripture(reference, "For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.\n For God sent not His Son into the world to condemn the world; but that the world through Him might be saved.");
 
         //loop 
             // display, hide, check if we need to quit
