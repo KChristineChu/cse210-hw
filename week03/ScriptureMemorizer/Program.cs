@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Word word = new Word();
-        Console.WriteLine(word.GetDisplayText());
+        //Word word = new Word();
+        //Console.WriteLine(word.GetDisplayText());
 
         Reference reference = new Reference("John", 3, 16);
         Scripture scripture = new Scripture(reference, "For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.");
@@ -15,11 +15,23 @@ class Program
             // use the functions in the Scripture class
 
         string userInput = "";
-        while (userInput != "quit")
+        
+        while (userInput != "quit" && !scripture.IsCompletelyHidden())
         {
+            Console.Clear();
+            Console.WriteLine(scripture.GetDisplayText());
+            
             Console.WriteLine("Press enter key to continue or type 'quit' to end");
             userInput = Console.ReadLine();
+
+            if (userInput != "quit")
+            {
+                scripture.HideRandomWords(3);
+            }
         }
+
+        Console.Clear();
+        Console.WriteLine(scripture.GetDisplayText());
 
 
         //Reference reference = new Reference("Proverbs", 3, 5);

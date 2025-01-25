@@ -1,10 +1,10 @@
 public class Scripture
 {
-    private Reference _reference;
+    private Reference _reference;   //scripture reference e.g. Proverbs..
 
-    private List<Word> _words;
+    private List<Word> _words;  //list of words in the scripture
 
-    public Scripture(Reference reference, string text)
+    public Scripture(Reference reference, string text)  //Reference : user-defined class, custom type, capital
     {
         //split up the word in text and store each as a word object in the list _words
         //e.g. string name = "";
@@ -12,10 +12,12 @@ public class Scripture
 
         //split and then loop through each word
         //create word object and put it into _words
-        string name = "";
-        string[] words = name.Split("");
-        foreach (string word in words)
-        Console.Write(word);
+        //string name = "";
+        _reference = reference;
+
+        string[] words = text.Split();
+        //foreach (string word in words)
+        //Console.Write(word);
     
 
     }
@@ -30,7 +32,7 @@ public class Scripture
     {
         //display Reference, all the Words
         //e.g. string text = "abc" + "def";
-        return "";
+        
 
     }
     public bool IsCompletelyHidden()
