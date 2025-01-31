@@ -1,24 +1,31 @@
 using System;
+using System.Security.AccessControl;
 
 public class Comment
 {
-    private string _username;
-    private string _text;
+    public string _commenter;
+    public string _text;
 
-    public void DisplayComment()
-    {
-        Console.WriteLine($"Name: {_username}");
-        //Console.WriteLine($"Comment: {_text}");
+    
+    //public Comment(string commenter, string text)
+    //{
+       // _commenter = commenter;
+        //_text = text;
+    //}
+    public void DisplayComment(string commenter, string text)
+    {   {
+            _commenter = commenter;
+            _text = text;
+    
+        Console.WriteLine($"Name: {_commenter}");
+        Console.WriteLine($"Comment: {_text}");
 
-        foreach (Video video in videos)
-        {
-            
-            Console.WriteLine(video);
+    }    
 
-            foreach (Comment comment in comments);
-            {
-                Console.WriteLine(comment);
-            }
+           // foreach (Comment comment in comments);
+          //  {
+               // Console.WriteLine(comment);
+            //}
         }
 
 

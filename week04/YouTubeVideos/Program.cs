@@ -8,6 +8,7 @@ class Program
         video1._title = "Video 1";
         video1._author = "Author 1";
         video1._lengthInSecond = 400;
+        video1.AddComment()
 
         Video video2 = new Video();
         video2._title = "Video 2";
@@ -19,6 +20,12 @@ class Program
         video3._author = "Author 3";
         video3._lengthInSecond = 300;
 
-        Display(video1);
+        video1.DisplayInfo();
+
+
+        video2.DisplayInfo();
+
+
+        video3.DisplayInfo();
     }
 }
