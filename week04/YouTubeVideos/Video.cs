@@ -1,6 +1,6 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Transactions;
+
+
 
 public class Video
 {
@@ -14,15 +14,22 @@ public class Video
     {
         _comments.Add(comment);
     }
-    public int NumOfComment()
-    {
-        return _comments.Count;
-    }
+    //public int NumOfComment()
+    //{
+        //return _comments.Count;
+    //}
     public void DisplayInfo()
     {
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"Author: {_author}");
         Console.WriteLine($"Length: {_lengthInSecond} seconds");
+        Console.WriteLine($"Number of Comments: {_comments.count}");
+
+        foreach (Comment comment in _comments)
+        {
+            comment.DisplayComment();
+        }
+        
     }
      
 }    

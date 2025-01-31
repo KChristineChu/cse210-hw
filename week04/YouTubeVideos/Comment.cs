@@ -7,16 +7,14 @@ public class Comment
     public string _text;
 
     
-    //public Comment(string commenter, string text)
-    //{
-       // _commenter = commenter;
-        //_text = text;
-    //}
-    public void DisplayComment(string commenter, string text)
-    {   {
-            _commenter = commenter;
-            _text = text;
-    
+    public Comment(string commenter, string text)   //constructor
+    {
+        _commenter = commenter;
+        _text = text;
+    }
+    public void DisplayComment()
+    {   
+              
         Console.WriteLine($"Name: {_commenter}");
         Console.WriteLine($"Comment: {_text}");
 
@@ -26,8 +24,8 @@ public class Comment
           //  {
                // Console.WriteLine(comment);
             //}
-        }
+        
 
 
-    }
+    
 }
