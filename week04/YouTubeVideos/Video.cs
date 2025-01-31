@@ -3,11 +3,18 @@ using System.Transactions;
 
 public class Video
 {
-    private string _title;
-    private string _author;
+    public string _title;
+    public string _author;
 
-    private int _lengthInSecond;
+    public int _lengthInSecond;
 
-    private List<Comment> _comments;
+    public List<Comment> _comments = new List<Comment>();
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine(_title);
+        Console.WriteLine(_author);
+        Console.WriteLine(_lengthInSecond);
+    }
      
 }    
