@@ -9,7 +9,7 @@ class Program
         video1._author = "Author 1";
         video1._lengthInSecond = 400;
         video1.AddComment(new Comment("Ali", "Informative"));
-        video1.AddComment(new Comment("Bob", "Useful information."));;
+        video1.AddComment(new Comment("Bob", "Useful information"));;
         video1.AddComment(new Comment("Cindy", "Great video"));
 
         Video video2 = new Video();
@@ -27,13 +27,11 @@ class Program
         video3.AddComment(new Comment("Gigi", "I enjoyed your video"));
         video3.AddComment(new Comment("Hugh", "Fantastic"));
         video3.AddComment(new Comment("Ivory", "Love your presentation"));
-
+        video3.AddComment(new Comment("Jake", "Awesome video"));
 
         video1.DisplayInfo();
 
-
         video2.DisplayInfo();
-
 
         video3.DisplayInfo();
     }

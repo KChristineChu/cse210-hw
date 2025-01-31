@@ -23,7 +23,7 @@ public class Video
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"Author: {_author}");
         Console.WriteLine($"Length: {_lengthInSecond} seconds");
-        Console.WriteLine($"Number of Comments: {_comments.count}");
+        Console.WriteLine($"Number of Comments: {_comments.Count}");
 
         foreach (Comment comment in _comments)
         {
