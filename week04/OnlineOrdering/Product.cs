@@ -16,7 +16,10 @@ public class Product
         _price = price;
 
     }
-
+    public string ProductName => _productName;
+    public string ProductId => _productId;
+    public int Quantity => _quantity;
+    public int Price => _price;
 
     public double TotalCost()
     {
