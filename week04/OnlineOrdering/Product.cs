@@ -18,12 +18,10 @@ public class Product
     }
 
 
-    public static int TotalCost(int quantity, int price)
+    public double TotalCost()
     {
-        int _quantity = quantity;
-        int _price = price;
-
-        return quantity * price;
+        
+        return _quantity * _price;
     }
 }
 

@@ -2,18 +2,19 @@ using System;
 
 public class Customer
 {
-    private string _customer;
+    private string _customerName;
     private Address _address;
 
-    public Customer (string customer, Address address)
+    public Customer (string customerName, Address address)
     {
-        _customer = customer;
+        _customerName = customerName;
         _address = address;
     }
 
+    
     public void DisplayCustomerInfo()
     {
-        Console.WriteLine($"Customer: {_customer}");
+        Console.WriteLine($"Customer: {_customerName}");
         Console.WriteLine($"Address: {_address.GetAddress()}");
     }
 

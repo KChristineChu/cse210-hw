@@ -8,45 +8,31 @@ class Program
         Address address1 = new Address("55 Cherry Lane, Seattle, Washington, USA");
         Customer customer1 = new Customer("Julie Brown", address1);
         
-        Product product1 = new Product();
-        product1._productName = "notebook";
-        product1._productId = "123";
-        product1._price = 3;
-        product1._quantity = 2;
-
-        Product product2 = new Product();
-        product2._productName = "marker";
-        product2._productId = "124";
-        product2._price = 2;
-        product2._quantity = 4;
-
-        Product product3 = new Product();
-        product3._productName = "pen";
-        product3._productId = "125";
-        product3._price = 4;
-        product3._quantity = 1;
+        Product product1 = new Product("notebook", "123", 2, 3);
+        Product product2 = new Product("marker", "124", 2, 4);
+        Product product3 = new Product("pen", "125", 4, 1);
 
         Address address2 = new Address("67 Cedar street, Cityvill, Toronto, Canada");
         Customer customer2 = new Customer("Ian Jacobson", address2);
-        
-        Product product4 = new Product();
-        product4._productName = "picture frame";
-        product4._productId = "126";
-        product4._price = 5;
-        product4._quantity = 2;
 
-        Product product5 = new Product();
-        product5._productName = "book stand";
-        product5._productId = "127";
-        product5._price = 1;
-        product5._quantity = 9;
+        Product product4 = new Product("picture frame", "126", 5, 2);
+        Product product5 = new Product("book stand", "127", 1, 9);
 
-        DisplayPackingLabel();
+        List<Product> products1 = new List<Product> {product1, product2, product3};
+        Order order1 = new Order(customer1, products1);
 
-        DisplayShippingLabel();
+        List<Product> products2 = new List<Product> {product4, product5};
+        Order order2 = new Order(customer1, products1);
 
-        GetTotalPrice();
+        Console.WriteLine("Order 1: ");
+        order1.DisplayPackingLabel();
+        order1.DisplayShippingLabel();
+        Console.WriteLine($"Total Price: ${order1.GetTotalPrice()}");
   
-
+        Console.WriteLine("Order 2: ");
+        order1.DisplayPackingLabel();
+        order1.DisplayShippingLabel();
+        Console.WriteLine($"Total Price: ${order2.GetTotalPrice()}");
+  
     }
 }

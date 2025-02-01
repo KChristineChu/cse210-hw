@@ -25,13 +25,16 @@ public class Address
 
     public bool IsUsa()
     {
-        if (_country == "USA")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return _country == "USA";
+
+
+        //if (_country == "USA")
+        //{
+           // return true;
+        //}
+        //else
+        //{
+            //return false;
     }
+
 }

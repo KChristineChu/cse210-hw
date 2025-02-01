@@ -15,43 +15,44 @@ public class Order
   
   public float GetShippingCost()
   {
-    float shippingFee;
-    if(_customer.Address.IsUsa())
-    {
-        shippingFee = 5;
-    }
-    else
-    {
-        shippingFee = 35;
-    }
-    return shippingFee;
+    return _customer.Address.IsUsa() ? 5 : 35;
+
+    //float shippingFee;
+    //if(_customer.Address.IsUsa())
+    //{
+       // shippingFee = 5;
+    //}
+    //else
+    //{
+        //shippingFee = 35;
+    //}
+    //return shippingFee;
   }
   
-  public void GetTotalPrice(int quantity)
+  public double GetTotalPrice(int quantity)
   {
-      float sum = 0;
+      double sum = 0;
 
       foreach (var product in _products)
       {
-        sum += product.TotalCost(quantity, price);
+        sum += product.TotalCost();
 
-        return sum + shippingFee;
-      
+        
       }
-      
+      return sum + GetShippingCost();
 }
 
     public void DisplayPackingLabel()
     {
         foreach (var product in _products)
         {
-            Console.WriteLine($"Product name: {_productName}, product ID: {_productId}");
+            Console.WriteLine($"Product name: {product.ProductName}, product ID: {product.ProductId}");
         }
     } 
 
     public void DisplayShippingLabel()
     {
         Console.WriteLine($"Customer Name: {_customer}");
-        Console.WriteLine($"Address: {_address}");
+        Console.WriteLine($"Address: {_customer.Address.GetAddress()}");
     }   
 }
