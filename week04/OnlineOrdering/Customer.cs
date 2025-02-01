@@ -2,7 +2,7 @@ using System;
 
 public class Customer
 {
-    private string _customer;
+    public string _customer;
     public Address _address;
 
     public Customer (string customer, Address address)
@@ -14,8 +14,8 @@ public class Customer
         Console.WriteLine($"Address: {_address}");
     }
 
-    public void LiveInUsa()
+    public bool LiveInUsa()
     {
-
+        return _address.IsUsa();
     }
 }
