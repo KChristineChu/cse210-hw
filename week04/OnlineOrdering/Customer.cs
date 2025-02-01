@@ -11,7 +11,7 @@ public class Customer
         _address = address;
     }
 
-    public void DisplayCustomInfo()
+    public void DisplayCustomerInfo()
     {
         Console.WriteLine($"Customer: {_customer}");
         Console.WriteLine($"Address: {_address.GetAddress()}");

@@ -8,24 +8,24 @@ public class Product
     private int _quantity;
     private int _price;
 
-    
+    public Product(string productName, string productId, int quantity, int price)
+    {
+        _productName = productName;
+        _productId = productId;
+        _quantity = quantity;
+        _price = price;
+
+    }
 
 
-    public int TotalCost(int quantity, int price)
+    public static int TotalCost(int quantity, int price)
     {
         int _quantity = quantity;
         int _price = price;
 
         return quantity * price;
     }
-
-    internal float TotalCost(object quantity, object price)
-    {
-        throw new NotImplementedException();
-    }
-
-    internal float TotalCost(int quantity, object price)
-    {
-        throw new NotImplementedException();
-    }
 }
+
+
+    

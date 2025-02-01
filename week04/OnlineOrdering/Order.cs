@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 
 public class Order
@@ -11,6 +12,21 @@ public class Order
     _customer = customer;
     _products = products;
  }   
+  
+  public float GetShippingCost()
+  {
+    float shippingFee;
+    if(_customer.Address.IsUsa())
+    {
+        shippingFee = 5;
+    }
+    else
+    {
+        shippingFee = 35;
+    }
+    return shippingFee;
+  }
+  
   public void GetTotalPrice(int quantity)
   {
       float sum = 0;
@@ -19,7 +35,7 @@ public class Order
       {
         sum += product.TotalCost(quantity, price);
 
-        return sum + shippingCost;
+        return sum + shippingFee;
       
       }
       
@@ -36,6 +52,6 @@ public class Order
     public void DisplayShippingLabel()
     {
         Console.WriteLine($"Customer Name: {_customer}");
-        Console.WriteLine($"Address: {Address}");
+        Console.WriteLine($"Address: {_address}");
     }   
 }
