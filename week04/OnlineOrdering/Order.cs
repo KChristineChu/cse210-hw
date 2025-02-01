@@ -6,13 +6,13 @@ public class Order
     private List<Product> _products = new List<Product>();
     private Customer _customer;
 
-    public float TotalCost(int productPrice, int quantity)
-    {
-        _productPrice = productPrice;
-        _quantity = quantity;
+    //public float TotalCost(int productPrice, int quantity)
+    //{
+        //_productPrice = productPrice;
+        //_quantity = quantity;
         
-        return productPrice * quantity;
-    }
+        //return productPrice * quantity;
+    //}
 
 
 //  public float GetTotalPrice()
@@ -26,12 +26,12 @@ public class Order
 
     public void DisplayPackingLabel()
     {
-        Console.WriteLine($"Product name: {_product1}, product ID: {_productId}");
+        Console.WriteLine($"Product name: {_productName}, product ID: {_productId}");
     } 
 
     public void DisplayShippingLabel()
     {
-        Console.WriteLine($"Customer Name: {_name}");
+        Console.WriteLine($"Customer Name: {_customer}");
         Console.WriteLine($"Address: {Address}");
     }   
 }
