@@ -5,7 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Customer customer1 = new Customer("Julie Brown", "55 Cherry Lane, Seattle, Washington USA");
+        Address address1 = new Address("55 Cherry Lane, Seattle, Washington, USA");
+        Customer customer1 = new Customer("Julie Brown", address1);
+        
         Product product1 = new Product();
         product1._productName = "notebook";
         product1._productId = "123";
@@ -24,7 +26,9 @@ class Program
         product3._price = 4;
         product3._quantity = 1;
 
-        Customer customer2 = new Customer("Ian Jacobson" "12 Rue de la Paix, Paris France");
+        Address address2 = new Address("67 Cedar street, Cityvill, Toronto, Canada");
+        Customer customer2 = new Customer("Ian Jacobson", address2);
+        
         Product product4 = new Product();
         product4._productName = "picture frame";
         product4._productId = "126";

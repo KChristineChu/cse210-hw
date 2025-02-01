@@ -14,7 +14,7 @@ public class Customer
     public void DisplayCustomInfo()
     {
         Console.WriteLine($"Customer: {_customer}");
-        Console.WriteLine($"Address: {_address}");
+        Console.WriteLine($"Address: {_address.GetAddress()}");
     }
 
     public bool LiveInUsa()

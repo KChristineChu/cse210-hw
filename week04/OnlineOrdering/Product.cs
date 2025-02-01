@@ -18,4 +18,14 @@ public class Product
 
         return quantity * price;
     }
+
+    internal float TotalCost(object quantity, object price)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal float TotalCost(int quantity, object price)
+    {
+        throw new NotImplementedException();
+    }
 }
