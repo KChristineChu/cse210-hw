@@ -2,11 +2,11 @@ using System;
 
 public class Product
 {
-    public string _productName;
-    public string _productId;
+    private string _productName;
+    private string _productId;
 
-    public int _quantity;
-    public int _price;
+    private int _quantity;
+    private int _price;
 
     
 
