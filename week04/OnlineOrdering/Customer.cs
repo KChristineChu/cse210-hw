@@ -11,7 +11,17 @@ public class Customer
         _address = address;
     }
 
-    
+    public string CustomerName
+    {
+        get{ return _customerName;}
+
+    }
+
+    public Address Address
+    {
+        get{ return _address;}
+    }
+
     public void DisplayCustomerInfo()
     {
         Console.WriteLine($"Customer: {_customerName}");

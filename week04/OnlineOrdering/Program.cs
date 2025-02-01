@@ -5,14 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Address address1 = new Address("55 Cherry Lane, Seattle, Washington, USA");
+        Address address1 = new Address("55 Cherry Lane", "Seattle", "Washington", "USA");
         Customer customer1 = new Customer("Julie Brown", address1);
         
         Product product1 = new Product("notebook", "123", 2, 3);
         Product product2 = new Product("marker", "124", 2, 4);
         Product product3 = new Product("pen", "125", 4, 1);
 
-        Address address2 = new Address("67 Cedar street, Cityvill, Toronto, Canada");
+        Address address2 = new Address("67 Cedar street", "Cityvill", "Toronto", "Canada");
         Customer customer2 = new Customer("Ian Jacobson", address2);
 
         Product product4 = new Product("picture frame", "126", 5, 2);
@@ -30,8 +30,8 @@ class Program
         Console.WriteLine($"Total Price: ${order1.GetTotalPrice()}");
   
         Console.WriteLine("Order 2: ");
-        order1.DisplayPackingLabel();
-        order1.DisplayShippingLabel();
+        order2.DisplayPackingLabel();
+        order2.DisplayShippingLabel();
         Console.WriteLine($"Total Price: ${order2.GetTotalPrice()}");
   
     }
