@@ -15,8 +15,17 @@ public class Order
   
   public float GetShippingCost()
   {
-    return _customer.Address.IsUsa() ? 5 : 35;
+    //return _customer.Address.IsUsa() ? 5 : 35;          //ternary statement if-else
 
+    
+    if(_customer.Address.IsUsa()) {
+        return 5;
+    }
+    else 
+    {
+        return 35;
+    }
+    
     
   }
   
@@ -41,7 +50,7 @@ public class Order
 
     public void DisplayShippingLabel()
     {
-        Console.WriteLine($"Customer Name: {_customerName}");
+        Console.WriteLine($"Customer Name: {_customer}");
         Console.WriteLine($"Address: {_customer.Address.GetAddress()}");
     }   
 }
