@@ -15,8 +15,6 @@ public class Order
   
   public float GetShippingCost()
   {
-    //return _customer.Address.IsUsa() ? 5 : 35;          //ternary statement if-else
-
     
     if(_customer.Address.IsUsa()) {
         return 5;
