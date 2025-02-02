@@ -48,7 +48,7 @@ public class Order
 
     public void DisplayShippingLabel()
     {
-        Console.WriteLine($"Customer Name: {_customer}");
+        Console.WriteLine($"Customer Name: {_customer.CustomerName}");
         Console.WriteLine($"Address: {_customer.Address.GetAddress()}");
     }   
 }

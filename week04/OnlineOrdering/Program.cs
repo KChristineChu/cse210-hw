@@ -22,7 +22,7 @@ class Program
         Order order1 = new Order(customer1, products1);
 
         List<Product> products2 = new List<Product> {product4, product5};
-        Order order2 = new Order(customer1, products1);
+        Order order2 = new Order(customer2, products2);
 
         Console.WriteLine("Order 1: ");
         order1.DisplayPackingLabel();
