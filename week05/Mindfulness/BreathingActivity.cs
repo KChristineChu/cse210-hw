@@ -3,15 +3,15 @@ using System.Diagnostics;
 
 public class BreathingActivity : Activity
 {
-    BreathingActivity breathingActivity(string name, string description, int duration) : base(name, description, duration)
+    
+    public BreathingActivity(string name, string description, int duration) : base(name, description, duration)
 
-    public BreathingActivity()
     {
         _name = "Breathing";
-        _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear you mind and focus on your breathing.";
+        _description = "relax by walking you through breathing in and out slowly. Clear you mind and focus on your breathing.";
         Console.WriteLine();
         Console.WriteLine("How long, in seconds, would you like for your session? ");
-        _duration = Console.ReadLine();
+        _duration = Convert.ToInt32(Console.ReadLine());
 
         
     }
@@ -20,8 +20,8 @@ public class BreathingActivity : Activity
     {
         Console.Write("Get ready...");
         Console.WriteLine();
-        Console.Write($"Breath in ...{_ });
-        Console.Write($"Breath out...{_ });
+        Console.Write($"Breath in ...{_duration}");
+        Console.Write($"Breath out...{_duration}");
     }
 
     //Console.WriteLine("Welcome to the Breathing Activity.");
@@ -29,13 +29,13 @@ public class BreathingActivity : Activity
     //Console.WriteLine("This activity will help you relax by walking you through breathing in and out slowly. Clear you mind and focus on your breathing.");
     //Console.WriteLine();
     //Console.WriteLine("How long, in seconds, would you like for your session? ")
-    //int _duration = Console.ReadLine();
+    // _duration = Console.ReadLine();
 
 
 
     //Console.Write("Get ready...");
     //Console.Write();
-    //Console.Write("Breath in ...{_ });
-    //Console.Write("Breath out...{_ });
+    //Console.Write("Breath in ...{_ });   count backward
+    //Console.Write("Breath out...{_ });   count backward
 
 }

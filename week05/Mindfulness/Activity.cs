@@ -8,7 +8,7 @@ using System;
         protected string _description;
         protected int _duration;
 
-        public Activity()
+        public Activity (string name, string description, int duration)
         {
 
         }
@@ -19,6 +19,7 @@ using System;
             
             Console.WriteLine($"Welcome to the {_name} Activity" );
             Console.WriteLine();
+            Console.WriteLine($"This activity will help you {_description}");
         }  
 
         public void DisplayEndingMessage()
@@ -29,6 +30,24 @@ using System;
         }
         public void ShowSpinnerInSec()
         {
+            Console.WriteLine("Get ready");
+
+            List<string> spinner = new List<string>();
+            spinner.Add ("|");
+            spinner.Add ("/");
+            spinner.Add ("_");
+            spinner.Add ("\\");
+            spinner.Add ("|");
+            spinner.Add ("/");
+            spinner.Add ("_");
+            spinner.Add ("\\");
+
+            //foreach  (string s in spinner)
+            {
+               // Console.Write(5);
+               // Thread.Sleep (1000);
+                
+            }
 
         }
         public void ShowCountDownInSec()
@@ -39,7 +58,7 @@ using System;
     
     
 
-    //for(int i = _duration; i < 0; i--)
+    //for(int i = _duration; i < 0; i--)  
     //{
         //Console.Write(i);
         //Thread.Sleep (1000);
