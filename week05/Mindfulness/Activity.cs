@@ -1,7 +1,7 @@
 using System;
 
-namespace mindfulness
-{
+
+
     public class Activity
     {
         protected string _name;
@@ -32,4 +32,3 @@ namespace mindfulness
             
         }
     }
-}
