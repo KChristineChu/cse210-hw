@@ -1,6 +1,6 @@
 using System;
 
-namespace assignment_exercise
+namespace homework
 {
     public class Assignment
     {
@@ -14,7 +14,7 @@ namespace assignment_exercise
         }
         public string GetSummary()
         {
-            return $"{_studentName}, {_topic}";
+            return $"{_studentName} - {_topic}";
             
 
         }

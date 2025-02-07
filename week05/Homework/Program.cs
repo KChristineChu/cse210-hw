@@ -1,5 +1,6 @@
 using System;
-using assignment_exercise;
+using homework;
+
 
 class Program
 {
@@ -7,5 +8,8 @@ class Program
     {
        Assignment assignment = new ("Jones", "History");
        Console.WriteLine(assignment.GetSummary());
+
+       MathAssignment mathAssignment = new ("Robert Rodriguez", "Fractions", "Section 7.3", "Problems 8-19");
+       Console.WriteLine(mathAssignment.GetHomeworkList());
     }
 }
