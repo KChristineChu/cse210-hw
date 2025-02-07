@@ -12,6 +12,7 @@ namespace homework
         }
         public string GetWritingInformation()
         {
+            //string studentName = GetStudentName();
             return $"{_studentName} - {_topic} \n{_title}";
         }
         
