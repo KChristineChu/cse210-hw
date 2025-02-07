@@ -4,8 +4,8 @@ namespace homework
 {
     public class MathAssignment : Assignment
     {
-        protected string _textbookSection;
-        protected string _problems;
+        private string _textbookSection;
+        private string _problems;
 
         public MathAssignment(string studentName, string topic, string textbookSection, string problems):base(studentName, topic)
         {

@@ -4,7 +4,7 @@ namespace homework
 {
     public class WritingAssignment : Assignment
     {
-        protected string _title;
+        private string _title;
 
         public WritingAssignment(string studentName, string topic, string title) : base(studentName, topic)
         {
