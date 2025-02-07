@@ -20,15 +20,15 @@ class Program
 
             if (userInput == "1")
             {
-                
+              activity.BreathingActivity();  
             }
             else if (userInput == "2")
             {
-                
+               activity.ReflectingActivity(); 
             }
             else if (userInput == "3")
             {
-                
+                activity.ListingActivity();
             }
             else if (userInput == "4")
             {
