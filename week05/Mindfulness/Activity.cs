@@ -1,6 +1,7 @@
 using System;
 
-
+namespace mindfulness
+{
 
     public class Activity
     {
@@ -41,6 +42,13 @@ using System;
             Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity");
             ShowSpinnerInSec();
         }
+
+        public void InputDurationTime()
+    {
+        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        _duration = Convert.ToInt32(Console.ReadLine());
+
+    }
         public void ShowSpinnerInSec()
         {
             
@@ -64,7 +72,7 @@ using System;
         }
         public void ShowCountDownInSec()
         {
-            for (int i = 3; i > 0; i--)
+            for (int i = 5; i > 0; i--)
             {
                 Console.Write(i);                     
                 Thread.Sleep(1000);
@@ -78,7 +86,7 @@ using System;
             
         }
 
-        public void SetName(string new_name) 
+        /*public void SetName(string new_name) 
         {
             _name = new_name;
         }
@@ -87,8 +95,9 @@ using System;
         {
             _description = new_description;
         }
+        */
     }
-    
+}    
 
     
 
