@@ -5,8 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Activity activity = new Activity ();
-
+        
         while (true)
         {
             Console.WriteLine("Menu Options: ");
@@ -20,15 +19,20 @@ class Program
 
             if (userInput == "1")
             {
-              activity.BreathingActivity();  
+              BreathingActivity breathingActivity1 = new BreathingActivity("", "", 0);
+              breathingActivity1.DisplayStartingMessage();
+              breathingActivity1.InputDurationTime();
+              breathingActivity1.Run();
+              breathingActivity1.DisplayEndingMessage();
+               
             }
             else if (userInput == "2")
             {
-               activity.ReflectingActivity(); 
+               //activity.ReflectingActivity(); 
             }
             else if (userInput == "3")
             {
-                activity.ListingActivity();
+                //activity.ListingActivity();
             }
             else if (userInput == "4")
             {

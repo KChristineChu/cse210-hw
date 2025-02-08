@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-
+/*
 public class ReflectingActivity : Activity
 {
     private List<string> _prompts;
@@ -60,3 +60,5 @@ public class ReflectingActivity : Activity
 //Console.WriteLine ("Consider the following prompt: ");
 //Console.WriteLine ("--- Think of a time when you did something really difficult. ---")
 //Console.WriteLine ("When you have something in mind, press enter to continue.)
+
+*/
