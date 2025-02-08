@@ -27,10 +27,25 @@ public class ReflectingActivity : Activity
     public string GetRandomQuestion()
     {
 
+        Console.WriteLine("Now ponder each");
+        //Console.WriteLine("You may begin in: {_countdown 5 sec}");
+        
+
     }
     public void DisplayPrompt()
     {
-        Console.WriteLine ("Consider the following prompt: ");
+        string prompt = PromptGenerator.GetRandomPrompt();
+         Console.WriteLine($"Consider the following prompt: {prompt}");
+         Console.WriteLine("When you have something in mind, press enter to continue.");
+
+
+         //Console.Write("Write your entry: ");
+         //string entryText = Console.ReadLine();
+         //Entry entry = new(prompt, entryText); 
+         //_entries.Add(entry);
+        //Console.WriteLine("Entry added");
+        
+        
 
 
     }
