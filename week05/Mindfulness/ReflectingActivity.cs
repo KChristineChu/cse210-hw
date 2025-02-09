@@ -31,65 +31,35 @@ namespace mindfulness
             
         };
 
-
-        //public BreathingActivity(string name="", string description="", int duration=0) : base(name, description, duration)
-
         public ReflectingActivity (string name, string description, int duration) : base (name, description, duration)
         {
             _name = "Reflecting";
             _description = "reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life";
 
-            //Console.WriteLine("How long, in seconds, would you like for your session? ");
-            //_duration = Convert.ToInt32(Console.ReadLine());
         }
 
         
         public void Run()
         {
             Console.Write("Get ready...\n");
-            ShowSpinnerInSec();      //need more work for the method in Activity file
+            ShowSpinnerInSec();      
             
             DisplayPrompt();
 
             DisplayQuestions();
 
-            /*
-            Console.WriteLine("When you have something in mind, press enter to continue");
-            string _userReply = Console.ReadLine();
-
-            if (_userReply != "")
-            {
-
-                Console.WriteLine("Now ponder each of the following questions as they related to this experience. ");
             
-                Console.WriteLine("You may begin in: ");
-                ShowCountDownInSec();
-            }
-
-            DateTime currentTime = DateTime.Now;
-            DateTime futureTime  = currentTime.AddSeconds(_duration);
-            while(currentTime < futureTime) 
-            {
-                GetRandomQuestion();
-                ShowCountDownInSec();
-
-                currentTime = DateTime.Now;
                 
-            }*/
+            
         }
         public void GetRandomPrompt()
         {
-            //Console.WriteLine("Consider the following prompt: ");
+            
             var random = new Random();
             Console.WriteLine(Prompts[random.Next(Prompts.Count)]);
         }
         public void GetRandomQuestion()
         {
-
-            //Console.WriteLine("Now ponder each");
-            
-            //Console.Write("You may begin in: ");
-            //ShowCountDownInSec();
             var random = new Random();
             Console.WriteLine(Questions[random.Next(Questions.Count)]);
 
@@ -99,10 +69,7 @@ namespace mindfulness
             
             Console.WriteLine("Consider the following prompt: ");
             GetRandomPrompt();
-
-            //Console.WriteLine("When you have something in mind, press enter to continue.");
-
-          
+         
 
         }
         public void DisplayQuestions()

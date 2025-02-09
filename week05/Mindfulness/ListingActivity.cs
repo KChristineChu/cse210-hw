@@ -26,7 +26,7 @@ namespace mindfulness
         public void Run()
         {
             Console.Write("Get ready...\n");
-            ShowSpinnerInSec();      //need more work for the method in Activity file
+            ShowSpinnerInSec();      
             
             GetRandomPrompt();
 
@@ -75,10 +75,8 @@ namespace mindfulness
 
     } 
 
-    //Console.Write("Write your entry: ");
-            //string entryText = Console.ReadLine();
-            //Entry entry = new(prompt, entryText); 
-            //_entries.Add(entry);
+    
+            
           
     
 }

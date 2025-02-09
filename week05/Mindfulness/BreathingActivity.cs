@@ -12,8 +12,7 @@ namespace mindfulness;
             
             _name = "Breathing";
             _description = "relax by walking you through breathing in and out slowly. Clear you mind and focus on your breathing.";
-            //SetName("Breathing");
-            //SetDescription("relax by walking you through breathing in and out slowly. Clear you mind and focus on your breathing.");
+            
             Console.WriteLine();
 
             //DisplayStartingMessage();
@@ -21,7 +20,7 @@ namespace mindfulness;
         // Console.WriteLine("How long, in seconds, would you like for your session? ");
         //_duration = Convert.ToInt32(Console.ReadLine());
 
-            //Run();
+           
 
         }    
 
@@ -29,7 +28,7 @@ namespace mindfulness;
         {
             Console.Write("Get ready...\n");
 
-            ShowSpinnerInSec();      //need more work for the method in Activity file
+            ShowSpinnerInSec();      
             
             Console.WriteLine("");
             
@@ -37,10 +36,10 @@ namespace mindfulness;
             DateTime futureTime  = currentTime.AddSeconds(_duration);
             while(currentTime < futureTime) 
             {
-                Console.Write($"Breath in ...");  //another variable  count down
+                Console.Write($"Breath in ...");  
                 ShowCountDownInSec();
                 Console.WriteLine("");
-                Console.Write($"Breath out...");   //another variable  count down
+                Console.Write($"Breath out...");   
                 ShowCountDownInSec();
                 Console.WriteLine("");
                 currentTime = DateTime.Now;

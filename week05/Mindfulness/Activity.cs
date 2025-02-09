@@ -10,24 +10,15 @@ namespace mindfulness
         protected int _duration = 0;
 
         public Activity (string name, string description, int duration)
-        {
-            //BreathingActivity breathingActivity1 = new BreathingActivity("Bob", "brown hair", 0);
-            
+        {                
             _name = name;
             _description = description;
-            _duration = duration;
-            
-            /*
-            _name = "";
-            _description = "";
-            _duration = 0;
-            */
+            _duration = duration;       
         }
 
 
         public void DisplayStartingMessage()
-        {
-            
+        {    
             Console.WriteLine($"Welcome to the {_name} Activity" );
             Console.WriteLine("");
             Console.WriteLine($"This activity will help you {_description}");
@@ -65,14 +56,14 @@ namespace mindfulness
             foreach  (string s in spinnerStrings)
             {
                Console.Write(s);
-               Thread.Sleep (500);
+               Thread.Sleep (1000);
                Console.Write("\b \b"); 
             }
 
         }
         public void ShowCountDownInSec()
         {
-            for (int i = 5; i > 0; i--)
+            for (int i = 4; i > 0; i--)
             {
                 Console.Write(i);                     
                 Thread.Sleep(1000);
@@ -80,29 +71,13 @@ namespace mindfulness
             }
 
                 //Console.Write(".");            // add a dot at a second  ....         
-                //Thread.Sleep(1000);
-
-            
+                //Thread.Sleep(1000); 
             
         }
 
-        /*public void SetName(string new_name) 
-        {
-            _name = new_name;
-        }
-
-        public void SetDescription(string new_description) 
-        {
-            _description = new_description;
-        }
-        */
+        
     }
 }    
 
     
 
-    //for(int i = _duration; i < 0; i--)  
-    //{
-        //Console.Write(i);
-        //Thread.Sleep (1000);
-        //Console.Write("\b \b");
