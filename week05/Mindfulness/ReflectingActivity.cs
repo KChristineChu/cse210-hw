@@ -32,8 +32,6 @@ namespace mindfulness
         };
 
 
-
-
         //public BreathingActivity(string name="", string description="", int duration=0) : base(name, description, duration)
 
         public ReflectingActivity (string name, string description, int duration) : base (name, description, duration)
@@ -49,11 +47,25 @@ namespace mindfulness
         public void Run()
         {
             Console.Write("Get ready...\n");
-
             ShowSpinnerInSec();      //need more work for the method in Activity file
-            Console.WriteLine("Now ponder each");
-            Console.WriteLine("");
-            Console.Write("You may begin in: ");
+            
+            DisplayPrompt();
+
+            DisplayQuestions();
+
+            /*
+            Console.WriteLine("When you have something in mind, press enter to continue");
+            string _userReply = Console.ReadLine();
+
+            if (_userReply != "")
+            {
+
+                Console.WriteLine("Now ponder each of the following questions as they related to this experience. ");
+            
+                Console.WriteLine("You may begin in: ");
+                ShowCountDownInSec();
+            }
+
             DateTime currentTime = DateTime.Now;
             DateTime futureTime  = currentTime.AddSeconds(_duration);
             while(currentTime < futureTime) 
@@ -63,11 +75,11 @@ namespace mindfulness
 
                 currentTime = DateTime.Now;
                 
-            }
+            }*/
         }
         public void GetRandomPrompt()
         {
-            Console.WriteLine("Consider the following prompt: ");
+            //Console.WriteLine("Consider the following prompt: ");
             var random = new Random();
             Console.WriteLine(Prompts[random.Next(Prompts.Count)]);
         }
@@ -84,31 +96,45 @@ namespace mindfulness
         }
         public void DisplayPrompt()
         {
-            string prompt = PromptGenerator.GetRandomPrompt();
-            Console.WriteLine($"Consider the following prompt: {prompt}");
-            Console.WriteLine("When you have something in mind, press enter to continue.");
-
-
-            //Console.Write("Write your entry: ");
-            //string entryText = Console.ReadLine();
-            //Entry entry = new(prompt, entryText); 
-            //_entries.Add(entry);
-            //Console.WriteLine("Entry added");
             
-            
+            Console.WriteLine("Consider the following prompt: ");
+            GetRandomPrompt();
 
+            //Console.WriteLine("When you have something in mind, press enter to continue.");
+
+          
 
         }
         public void DisplayQuestions()
         {
+            Console.WriteLine("When you have something in mind, press enter to continue");
+            string _userReply = Console.ReadLine();
+
+            if (_userReply != "")
+            {
+
+                Console.WriteLine("Now ponder each of the following questions as they related to this experience. ");
+            
+                Console.WriteLine("You may begin in: ");
+                ShowCountDownInSec();
+            }
+
+            DateTime currentTime = DateTime.Now;
+            DateTime futureTime  = currentTime.AddSeconds(_duration);
+            while(currentTime < futureTime) 
+            {
+                GetRandomQuestion();
+                ShowCountDownInSec();
+
+                currentTime = DateTime.Now;
+                
+            }
+
+
             
         }
     }
 
 }
 
-
-//Console.WriteLine ("Consider the following prompt: ");
-//Console.WriteLine ("--- Think of a time when you did something really difficult. ---")
-//Console.WriteLine ("When you have something in mind, press enter to continue.)
 

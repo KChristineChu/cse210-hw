@@ -21,26 +21,32 @@ namespace mindfulness
 
                 if (userInput == "1")
                 {
-                BreathingActivity breathingActivity1 = new BreathingActivity("", "", 0);
-                breathingActivity1.DisplayStartingMessage();
-                breathingActivity1.InputDurationTime();
-                breathingActivity1.Run();
-                breathingActivity1.DisplayEndingMessage();
-                
+                    BreathingActivity breathingActivity1 = new BreathingActivity("", "", 0);
+                    breathingActivity1.DisplayStartingMessage();
+                    breathingActivity1.InputDurationTime();
+                    breathingActivity1.Run();
+                    breathingActivity1.DisplayEndingMessage();
+                    
                 }
                 else if (userInput == "2")
                 {
-                //activity.ReflectingActivity();
-                ReflectingActivity reflectingActivity1 = new ReflectingActivity("", "", 0);
-                reflectingActivity1.DisplayStartingMessage();
-                reflectingActivity1.InputDurationTime();
-                reflectingActivity1.Run(); 
-                reflectingActivity1.GetRandomPrompt();
-                reflectingActivity1.DisplayEndingMessage();
+                    ReflectingActivity reflectingActivity1 = new ReflectingActivity("", "", 0);
+                    reflectingActivity1.DisplayStartingMessage();
+                    reflectingActivity1.InputDurationTime();
+                    reflectingActivity1.Run(); 
+                    reflectingActivity1.GetRandomPrompt();
+                    reflectingActivity1.DisplayEndingMessage();
                 }
                 else if (userInput == "3")
                 {
                     //activity.ListingActivity();
+                    ListingActivity listingActivity1 = new ListingActivity ("", "", 0);
+                    listingActivity1.DisplayStartingMessage();
+                    listingActivity1.InputDurationTime();
+                    listingActivity1.Run();
+                    listingActivity1.GetListFromUser();
+                    listingActivity1.DisplayEndingMessage();
+
                 }
                 else if (userInput == "4")
                 {
