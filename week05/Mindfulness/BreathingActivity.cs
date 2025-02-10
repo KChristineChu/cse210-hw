@@ -15,10 +15,7 @@ namespace mindfulness;
             
             Console.WriteLine();
 
-            //DisplayStartingMessage();
-        
-        // Console.WriteLine("How long, in seconds, would you like for your session? ");
-        //_duration = Convert.ToInt32(Console.ReadLine());
+            
 
            
 

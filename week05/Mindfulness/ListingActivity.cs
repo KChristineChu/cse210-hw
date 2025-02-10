@@ -5,7 +5,7 @@ namespace mindfulness
 
    public class ListingActivity : Activity
     {
-        private int _count;
+        private int _count = 0;
         private List<string> _prompts;
 
         private List<string> Prompts = new List<string>
@@ -63,11 +63,13 @@ namespace mindfulness
                 string entry = Console.ReadLine();
                 
                 userList.Add(entry);
-                _count = userList.Count;
-                
+               
+                foreach (string e in userList)
+                {
+                    _count += 1; 
+                }
                 currentTime = DateTime.Now;
 
-                
             }     
             
             Console.WriteLine($"You listed {_count} items!");    
