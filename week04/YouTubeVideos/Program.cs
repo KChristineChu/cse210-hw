@@ -4,35 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Video video1 = new Video();
-        video1._title = "Video 1";
-        video1._author = "Author 1";
-        video1._lengthInSecond = 400;
-        video1.AddComment(new Comment("Ali", "Informative"));
-        video1.AddComment(new Comment("Bob", "Useful information"));;
-        video1.AddComment(new Comment("Cindy", "Great video"));
+        Video video1 = new Video("Video 1", "Author 1", 400);
+        //video1.DisplayCommenterInfo("Informative video");
 
-        Video video2 = new Video();
-        video2._title = "Video 2";
-        video2._author = "Author 2";
-        video2._lengthInSecond = 200;
-        video2.AddComment(new Comment("David", "Interesting"));
-        video2.AddComment(new Comment("Elly", "Very funny"));
-        video2.AddComment(new Comment("Frank", "Hilarious"));
+        Video video2 = new Video("Video 2", "Author 2", 200);
 
-        Video video3 = new Video();
-        video3._title = "Video 3";
-        video3._author = "Author 3";
-        video3._lengthInSecond = 300;
-        video3.AddComment(new Comment("Gigi", "I enjoyed your video"));
-        video3.AddComment(new Comment("Hugh", "Fantastic"));
-        video3.AddComment(new Comment("Ivory", "Love your presentation"));
-        video3.AddComment(new Comment("Jake", "Awesome video"));
+        Video video3 = new Video("Video 3", "Author 3", 400);
 
         video1.DisplayInfo();
 
         video2.DisplayInfo();
 
-        video3.DisplayInfo();
+        video3.DisplayInfo();        
+
+
     }
 }

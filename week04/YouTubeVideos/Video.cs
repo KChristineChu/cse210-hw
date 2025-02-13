@@ -5,9 +5,9 @@ using System.Transactions;
 
 public class Video
 {
-   private string _title;
-   private string _author;
-   private int _length;
+   protected string _title;
+   protected string _author;
+   protected int _length;
 
    public List<Comment> _comments;
 
@@ -41,7 +41,7 @@ public class Video
 
     foreach (Comment comment in _comments)
     {
-        comment.DisplayCommenterInfo();
+        Console.WriteLine (comment.DisplayCommenterInfo());
     }
    }
  
