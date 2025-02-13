@@ -19,7 +19,7 @@ public abstract class Shape
 
     }
 
-    public abstract double GetArea();
+    public abstract double GetArea();                 //no body nor an empty body
 
 
 }
