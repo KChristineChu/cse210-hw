@@ -1,35 +1,48 @@
 using System;
-
-
+using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Transactions;
 
 public class Video
 {
-    public string _title;
-    public string _author;
+   private string _title;
+   private string _author;
+   private int _length;
 
-    public int _lengthInSecond;
+   public List<Comment> _comments;
 
-    public List<Comment> _comments = new List<Comment>();
-    public void AddComment (Comment comment)
+   public Video(string title, string author, int length)
+   {
+    _title = title;
+    _author = author;
+    _length = length;
+    _comments = new List<Comment>();
+   }
+   public void AddComment(Comment comment)
+   {
+    _comments.Add(comment);
+
+   }
+
+    
+   public int DisplayNumOfComments()
+   {
+        return _comments.Count;
+    
+    
+   }
+
+   public void DisplayInfo()
+   {
+    Console.WriteLine($"Title: {_title}");
+    Console.WriteLine($"Author: {_author}");
+    Console.WriteLine($"Length: {_length} seconds");
+    Console.WriteLine($"Number of Comments: {_comments.Count}");
+
+    foreach (Comment comment in _comments)
     {
-        _comments.Add(comment);
+        comment.DisplayCommenterInfo();
     }
-    //public int NumOfComment()
-    //{
-        //return _comments.Count;
-    //}
-    public void DisplayInfo()
-    {
-        Console.WriteLine($"Title: {_title}");
-        Console.WriteLine($"Author: {_author}");
-        Console.WriteLine($"Length: {_lengthInSecond} seconds");
-        Console.WriteLine($"Number of Comments: {_comments.Count}");
-
-        foreach (Comment comment in _comments)
-        {
-            comment.DisplayComment();
-        }
-        
-    }
-     
-}    
+   }
+ 
+}

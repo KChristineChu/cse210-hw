@@ -1,31 +1,15 @@
 using System;
-using System.Security.AccessControl;
 
 public class Comment
 {
-    public string _commenter;
-    public string _text;
+    protected string _commenter;
+    protected string _text;
 
-    
-    public Comment(string commenter, string text)   //constructor
+    public string DisplayCommenterInfo()
     {
-        _commenter = commenter;
-        _text = text;
-    }
-    public void DisplayComment()
-    {   
-              
-        Console.WriteLine($"Name: {_commenter}");
-        Console.WriteLine($"Comment: {_text}");
-
-    }    
-
-           // foreach (Comment comment in comments);
-          
-               
-            
+        return $"Name: {_commenter} \n Comment: {_text}";
         
 
+    }
 
-    
 }
