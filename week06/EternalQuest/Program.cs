@@ -20,36 +20,60 @@ class Program
             Console.WriteLine("6. Quit");
 
             Console.Write("Select a choice from the menu: ");
-            string userInput = Console.ReadLine();
+            string userInput1 = Console.ReadLine();
 
-            if (userInput == "1")
+            if (userInput1 == "1")
+            {
+                while(true)
+                {
+                    Console.WriteLine("The types of Goals are: ");
+
+                    Console.WriteLine("1. Simple Goal");
+                    Console.WriteLine("2. Eternal Goal");
+                    Console.WriteLine("3. Checklist Goal");
+
+                    Console.Write("What type of goal would you like to create? ");
+                    string userInput2 = Console.ReadLine();
+
+                    if (userInput2 == "1")
+                    {
+
+                    }
+                    if (userInput2 == "2")
+                    {
+
+                    }
+                    if (userInput2 == "3")
+                    {
+
+                    }
+                }
+
+            }
+
+            else if (userInput1 == "2")
             {
 
             }
 
-            else if (userInput == "2")
+            else if (userInput1 == "3")
             {
 
             }
 
-            else if (userInput == "3")
-            {
-
-            }
-
-            else if (userInput == "4")
+            else if (userInput1 == "4")
             {
 
             
 
             }
 
-            else if (userInput == "5")
+            else if (userInput1 == "5")
             {
 
             }
 
-            else if (userInput == "6")
+            else if (userInput1 == "6")
             {
                 Console.WriteLine("Goodbye!");
             }
