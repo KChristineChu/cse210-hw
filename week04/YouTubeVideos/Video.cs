@@ -43,7 +43,9 @@ public class Video
     foreach (Comment comment in _comments)
     {
         Console.WriteLine (comment.DisplayCommenterInfo());
+        
     }
+    Console.WriteLine("");
    }
  
 }
