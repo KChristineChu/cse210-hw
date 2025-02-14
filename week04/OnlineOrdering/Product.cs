@@ -4,29 +4,17 @@ public class Product
 {
     private string _productName;
     private string _productId;
-
+    private float _price;
     private int _quantity;
-    private int _price;
-
-    public Product(string productName, string productId, int quantity, int price)
+    public Product(string productName, string productId, float price, int quantity)
     {
         _productName = productName;
         _productId = productId;
-        _quantity = quantity;
         _price = price;
-
+        _quantity = quantity;
     }
-    public string ProductName => _productName;
-    public string ProductId => _productId;
-    public int Quantity => _quantity;
-    public int Price => _price;
-
-    public double TotalCost()
+    public float TotalCost()
     {
-        
-        return _quantity * _price;
+        return _price * _quantity;
     }
 }
-
-
-    
