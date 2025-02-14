@@ -16,7 +16,6 @@ public class Comment
     {
         return $"Name: {_commenter} \n Comment: {_text}";
         
-
     }
 
 }
