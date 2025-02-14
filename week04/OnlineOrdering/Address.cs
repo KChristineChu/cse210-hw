@@ -7,14 +7,12 @@ public class Address
     private string _state;
     private string _country;
 
-    public string GetStreet
-    {get; set;}
-    public string GetCity
-    {get; set;}
-    public string GetState
-    {get; set;}
-    public string GetCountry
-    {get; set;}
+    public string GetAddress()                                  //another way to get (acess) to private variables
+    {
+        return $"{_street} {_city} {_state} {_country}";
+    }
+    
+    
     public Address(string street, string city, string state, string country)
     {
         _street = street;
@@ -22,10 +20,10 @@ public class Address
         _state = state;
         _country = country;
     }
-    public string DisplayAddress()
+    /*public void DisplayAddress()
     {
-        return $"{_street} \n{_city}, {_state} {_country}";
-    }
+        Console.WriteLine ($"{_street} \n{_city}, {_state} {_country}");
+    }*/
     public bool IsUsa()
     {
         if (_country == "USA")

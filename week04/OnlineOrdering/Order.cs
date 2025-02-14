@@ -11,7 +11,7 @@ public class Order
     }
     public float GetShippingCost()
     {
-        if (_customer.Address.IsUsa())
+        if (_customer.GetAddress().IsUsa())
         {
             return 5;
         }
@@ -35,12 +35,12 @@ public class Order
     {
         foreach (var product in _products)
         {
-            Console.WriteLine($"Product name: {Product._productName}, product ID: {Product._productId}");
+            Console.WriteLine($"Product name: {product.GetProductName()}, product ID: {product.GetProductId()}");
         }
     }
     public void DisplayShippingLabel()
     {
-        Console.WriteLine($"Customer Name: {_customer.Customer}");
-        Console.WriteLine($"Address: {_customer.Address.DisplayAddress()}");
+        Console.WriteLine($"Customer Name: {_customer.GetCustomer()}");
+        Console.WriteLine($"Address: {_customer.GetAddress().GetAddress()}");
     }
 }

@@ -20,21 +20,21 @@ public class Product
     {
         return _productName;
     }
-    public void SetProductName(string productName)
+    /*public void SetProductName(string productName)    //only when need to reset value
     {
         _productName = productName;
-    }
+    }*/
     public string GetProductId()
     {
         return _productId;
     }
-    public void SetProductId(string productId)
+    /*public void SetProductId(string productId)
     {
         _productId = productId;
-    }
+    }*/
     public float TotalCost()
     {
         return _price * _quantity;
     }
-    
+
 }
