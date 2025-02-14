@@ -12,6 +12,14 @@ public class Customer
         _address = address;
 
     }
+    public string GetCustomer {get; set;}
+    public Address GetAddress { get; set; }
+
+    public void DisplayCustomerInfo()
+    {
+        Console.WriteLine($"Customer: {_customer}");
+        Console.WriteLine($"Address: {_address.DisplayAddress()}");
+    }
     public bool LiveInUSA()
     {
         return _address.IsUsa();

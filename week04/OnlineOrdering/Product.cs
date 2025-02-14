@@ -6,6 +6,9 @@ public class Product
     private string _productId;
     private float _price;
     private int _quantity;
+
+    
+   
     public Product(string productName, string productId, float price, int quantity)
     {
         _productName = productName;
@@ -13,8 +16,25 @@ public class Product
         _price = price;
         _quantity = quantity;
     }
+    public string GetProductName()
+    {
+        return _productName;
+    }
+    public void SetProductName(string productName)
+    {
+        _productName = productName;
+    }
+    public string GetProductId()
+    {
+        return _productId;
+    }
+    public void SetProductId(string productId)
+    {
+        _productId = productId;
+    }
     public float TotalCost()
     {
         return _price * _quantity;
     }
+    
 }
