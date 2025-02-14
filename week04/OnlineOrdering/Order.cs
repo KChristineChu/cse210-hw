@@ -11,7 +11,7 @@ public class Order
     }
     public float GetShippingCost()
     {
-        if (_customer.GetAddress().IsUsa())
+        if (_customer.GetFullAddress().IsUsa())
         {
             return 5;
         }
@@ -41,6 +41,6 @@ public class Order
     public void DisplayShippingLabel()
     {
         Console.WriteLine($"Customer Name: {_customer.GetCustomer()}");
-        Console.WriteLine($"Address: {_customer.GetAddress().GetAddress()}");
+        Console.WriteLine($"Address: {_customer.GetFullAddress().GetAddress()}");
     }
 }

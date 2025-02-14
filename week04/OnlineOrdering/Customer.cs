@@ -16,7 +16,7 @@ public class Customer
     {
         return _customer;
     }
-    public Address GetAddress()
+    public Address GetFullAddress()
      {
         return _address;
      }

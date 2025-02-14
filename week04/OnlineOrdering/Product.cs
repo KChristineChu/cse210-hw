@@ -28,10 +28,6 @@ public class Product
     {
         return _productId;
     }
-    /*public void SetProductId(string productId)
-    {
-        _productId = productId;
-    }*/
     public float TotalCost()
     {
         return _price * _quantity;
