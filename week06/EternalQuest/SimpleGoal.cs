@@ -1,28 +1,36 @@
 using System;
 using System.Data.SqlTypes;
 
-public class SimpleGoal : Goal
+namespace EternalQuest
 {
-    private bool _isComplete;
-
-    public SimpleGoal(string name, string description, int points) : base (name, description, points)
+    public class SimpleGoal : Goal
     {
+        private bool _isComplete;
+
+        public SimpleGoal(string name, string description, int points) : base (name, description, points)
+        {
+            
+
+        }
+
+        public override void RecordEvent()
+        {
+
+        }
+        public override bool IsComplete()
+        {
+            if (_isComplete == true)
+            return "[X]";
+        }
+            else
+            {
+                return "[]";
+            }
+
+        public override string GetStringRepresentation()
+        {
+            return "";
+        }
         
-
     }
-
-    public override void RecordEvent()
-    {
-
-    }
-    public override bool IsComplete()
-    {
-        return _isComplete;
-    }
-
-    public override string GetStringRepresentation()
-    {
-        return "";
-    }
-    
 }

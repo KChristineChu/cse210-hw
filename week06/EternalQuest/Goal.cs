@@ -2,20 +2,22 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
-public abstract class Goal
+namespace EternalQuest
+{
+    public abstract class Goal
 {
     private string _shortName;
     private string _description;
-    private int _points;               //string?
+    private int _points;                        //string?
 
     public string GetShortName()
     {
         return _shortName;
     }
-    /*public void SetShortName(string shortName)
+    public void SetShortName(string shortName)
     {
         _shortName = shortName;
-    }*/
+    }
     public string GetDescription()
     {
         return _description;
@@ -40,31 +42,21 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract void RecordEvent()
-    {
-        Console.WriteLine("What is the name of your goal? ");
-        _shortName = Console.ReadLine();
-        Console.WriteLine("What is a short description of it? ");
-        _description = Console.ReadLine();
-        Console.WriteLine("What is the amount of points associated with this goal? ");  
-        _points = Console.ReadLine();
-
-        Console.WriteLine ("How many times does this goal need to be accomplished for a bonus? ");
-        _number = Console.ReadLine();
-        Console.WriteLine ("What is the bonus for accomplishing it that many times? "); 
-        _bonusPoints = Console.ReadLine();
-    }
-
+    public abstract void RecordEvent();            //no body, or empty body
+    
 
     public abstract bool IsComplete();
 
-    public string GetDetailsString()
+    public string GetDetailsString()                    // abstract?
     {
         return "";
     }
     public abstract string GetStringRepresentation();
     
 }
+
+}
+
 
 /*
 Same set of questions for option 1 choice 1 Simple Goal, 2 Eternal 3 Checklist: Each reply will be stored
