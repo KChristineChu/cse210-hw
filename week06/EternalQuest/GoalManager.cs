@@ -3,14 +3,14 @@ using System.IO.Enumeration;
 
 namespace EternalQuest
 {
-    public class GoalManager
+    public class GoalManager 
     {
-        private List<Goal> _goal;
+        private List<Goal> _goals;
         private int _score;
 
-        public List<Goal> GetGoal()
+        public List<Goal> GetGoals()
         {
-            return _goal;
+            return _goals;
         }
         public int GetScore()
         {
@@ -19,20 +19,26 @@ namespace EternalQuest
 
         public GoalManager (List<Goal> goal, int score)
         {
-            _goal = goal;
-            _score = score;
+            _goals = goal;                 
+            _score = score;                         //set the score to begin at 0
         }
 
         public void Start()
         {
             _score = 0;
-            Console.Write ($"You have {_score} points." );
+            Console.Write ($"You have {_score.DisplayPlayerInfo()} points." );
 
         }
         public void DisplayPlayerInfo()
         {
-            Console.WriteLine ("The goals are: ");
-            //Console.Write("[]");
+            //Displays the players current score.
+            foreach (int point in _points)
+            {
+                _score += point;
+
+            }
+            
+            
             ListGoalNames();
             ListGoalDetails();
 
@@ -40,10 +46,17 @@ namespace EternalQuest
         }
         public void ListGoalNames()
         {
+            foreach (var shortName in _shortName)
+            {
+                Console.WriteLine(shortName);
+            }
+            //Lists the names of each of the goals.
             // list _shortName
         }
         public void ListGoalDetails()
         {
+            //Lists the details of each goal (including the checkbox of whether it is complete).
+
             Console.WriteLine ("The goals are: ");
             Console.WriteLine ($"   {_shortName} ({_description})");
             //The goals are:
@@ -58,11 +71,9 @@ namespace EternalQuest
             Console.WriteLine("What is a short description of it? ");
             _description = Console.ReadLine();
             Console.WriteLine("What is the amount of points associated with this goal? ");  //50
-            _points = Console.ReadLine();
-            Console.WriteLine ("How many times does this goal need to be accomplished for a bonus? "); //3
-            _number = Console.ReadLine();
-            Console.WriteLine ("What is the bonus for accomplishing it that many times? ");       //500
-            _bonusPoints = Console.ReadLine();
+            _points = Convert.ToInt32(Console.ReadLine());
+
+            List<Goal> _goals = new List<Goal> (_shortName, _description, _points);//   //Then add the goal info to the list
 
         }
         public void RecordEvent()

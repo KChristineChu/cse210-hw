@@ -6,12 +6,14 @@ namespace EternalQuest
     {
         static void Main(string[] args)
         {
-            Start();                              //Console.WriteLine("You have   points.");
-
+            
             
 
             while(true)
             {
+                //Start();                              //Console.WriteLine("You have   points.");
+                Console.WriteLine("");
+                
                 Console.WriteLine("Menu Options: ");
 
                 Console.WriteLine("1. Create New Goal");
@@ -39,18 +41,28 @@ namespace EternalQuest
 
                         if (userInput2 == "1")
                         {
-                            //CreateGoal();
+                            CreateGoal();
+                            SimpleGoal simpleGoal = new SimpleGoal ("","", 0, IsComplete = false);
+                            
 
                         }
-                        if (userInput2 == "2")
+                        else if (userInput2 == "2")
                         {
-                            //CreateGoal();
+                            CreateGoal();
+                            EternalGoal eternalGoal = new EternalGoal ("", "", 0);
+                        }
+                        else if (userInput2 == "3")
+                        {
+                            CreateGoal();
+
+                            RecordEvent();
+
+                            ChecklistGoal checklistGoal = new ChecklistGoal ("", "", 0, 0, 0);
 
                         }
-                        if (userInput2 == "3")
+                        else 
                         {
-                            //CreateGoal();
-
+                            Console.WriteLine("Please select a type of goal from the menu ");
                         }
                     }
 
@@ -59,8 +71,9 @@ namespace EternalQuest
                 else if (userInput1 == "2")
                 {
                     Console.WriteLine ("The goals are: ");
-                    //ListGoalNames;
-                    //ListGoalDetails;
+                    //IsComplete();                          //on one line
+                    //ListGoalNames();
+                    //ListGoalDetails();
                 }
 
                 else if (userInput1 == "3")
