@@ -5,11 +5,19 @@ using System.Security.Cryptography.X509Certificates;
 namespace EternalQuest
 {
     public abstract class Goal
-{
-    private string _shortName;
-    private string _description;
-    private int _points;                        //string?
-
+    {
+    //private string _shortName;
+    protected string _shortName;
+    //private string _description;
+    protected string _description;
+    //private int _points;      
+    protected int _points;                 
+    public Goal(string name, string description, int points)
+    {
+        _shortName = name;
+        _description = description;
+        _points = points;
+    }
     public string GetShortName()
     {
         return _shortName;
@@ -35,12 +43,7 @@ namespace EternalQuest
         _points = points;
     }
 
-    public Goal(string name, string description, int points)
-    {
-        _shortName = name;
-        _description = description;
-        _points = points;
-    }
+    
 
     public abstract void RecordEvent();            //no body, or empty body
     // This method should do whatever is necessary for each specific kind of goal, 
@@ -52,13 +55,13 @@ namespace EternalQuest
     //This method should return true if the goal is completed. 
     //The way you determine if a goal is complete is different for each type of goal.
 
-    public string GetDetailsString()                    // abstract? - no
+    public virtual string GetDetailsString()                 // abstract? - no
     {
         return "";
     }
     public abstract string GetStringRepresentation();
     
-}
+    }
 
 }
 

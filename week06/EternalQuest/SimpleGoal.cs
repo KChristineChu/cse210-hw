@@ -15,27 +15,31 @@ namespace EternalQuest
 
         public override void RecordEvent()
         {
-             IsComplete();
-            
-            //Console.Write("[X]");
-            
-            
+            if(_isComplete == true)
+            {
+               Console.WriteLine(_points);
+               //Console.WriteLine(GetPoints());
+            }
+                
         }
        public override bool IsComplete()
         {
                       
-            if (_isComplete == false)                              //return false;
+            /*if (_isComplete == false)                              //return false;
             {
                 Console.Write("[ ]");
             }
             else
             {
                 Console.Write("[x]");
-            }
+            }*/
+            return _isComplete;
         }
+
         public override string GetStringRepresentation()
         {
             return $"{_shortName} {_description} {_points}";
+            //return $"{GetShortName()} {GetDescription()} {GetPoints()}";
         }
         
     }
