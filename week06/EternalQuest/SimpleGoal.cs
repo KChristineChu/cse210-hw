@@ -5,7 +5,7 @@ namespace EternalQuest
 {
     public class SimpleGoal : Goal
     {
-        private bool _isComplete = false;
+        protected bool _isComplete = false;
 
         public SimpleGoal(string name="", string description="", int points = 0, bool IsComplete = false) : base (name, description, points)
         {
@@ -25,14 +25,6 @@ namespace EternalQuest
        public override bool IsComplete()
         {
                       
-            /*if (_isComplete == false)                              //return false;
-            {
-                Console.Write("[ ]");
-            }
-            else
-            {
-                Console.Write("[x]");
-            }*/
             return _isComplete;
         }
 
@@ -44,3 +36,12 @@ namespace EternalQuest
         
     }
 }
+
+/*if (_isComplete == false)                              
+            {
+                Console.Write("[ ]");
+            }
+            else
+            {
+                Console.Write("[x]");
+            }*/

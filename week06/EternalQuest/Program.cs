@@ -39,39 +39,42 @@ namespace EternalQuest
                         Console.Write("What type of goal would you like to create? ");
                         string userInput2 = Console.ReadLine();
 
-                        if (userInput2 == "1")
-                        {
-                            Console.WriteLine("What is the name of your goal? ");
+
+
+                        //if (userInput2 == "1")
+                        //{
+                            /*Console.WriteLine("What is the name of your goal? ");
                             var shortSimpleName = Console.ReadLine();
                             Console.WriteLine("What is a short description of it? ");
                             var simpleDescription = Console.ReadLine();
-                            Console.WriteLine("What is the amount of points associated with this goal? ");  //50
-                            var simplePoints = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("What is the amount of points associated with this goal? ");  
+                            var simplePoints = Convert.ToInt32(Console.ReadLine());   
            
-                            SimpleGoal newSimpleGoal = new SimpleGoal(shortSimpleName, simpleDescription, simplePoints);
-                            goalManager.CreateGoal(newSimpleGoal);
+                            SimpleGoal newSimpleGoal = new SimpleGoal(shortSimpleName, simpleDescription, simplePoints);*/
+                            //goalManager.CreateGoal(newSimpleGoal);
+                            goalManager.CreateGoal(userInput2);
                         }
-                        else if (userInput2 == "2")
-                        {
+                        //else if (userInput2 == "2")
+                        //{
                             //goalManager.CreateGoal();
                             //EternalGoal eternalGoal = new EternalGoal ("", "", 0);
-                        }
-                        else if (userInput2 == "3")
-                        {
+                        //}
+                        //else if (userInput2 == "3")
+                        //{
                             //CreateGoal();
 
                             //RecordEvent();
 
                             //ChecklistGoal checklistGoal = new ChecklistGoal ("", "", 0, 0, 0);
-
+                        /*
                         }
                         else 
                         {
                             Console.WriteLine("Please select a type of goal from the menu ");
-                        }
+                        }*/
                     
 
-                }
+               // }
 
                 else if (userInput1 == "2")
                 {

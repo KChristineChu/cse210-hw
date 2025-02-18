@@ -1,24 +1,21 @@
 using System;
 using System.IO.Enumeration;
+using System.Runtime;
 using System.Security.Cryptography.X509Certificates;
 
 namespace EternalQuest
 {
     public class GoalManager
     {
-        private List<Goal> _goals;
-        private int _score;
+        protected List<Goal> _goals;
+        protected int _score;
 
-        public GoalManager (List<Goal> goal, int score)
+        public GoalManager (List<Goal> goals, int score)
         {
-            _goals = goal;                 
+            _goals = goals;                 
             _score = score;                         //set the score to begin at 0
         }
 
-        public List<Goal> GetGoals()
-        {
-            return _goals;
-        }
         public int GetScore()
         {
             return _score;
@@ -72,26 +69,58 @@ namespace EternalQuest
             //2. [ ] Study the scriptures (Study for at least 10 minutes)
             //3. [ ] Attend the temple (Attend and perform any ordinance) -- Currently completed: 0/3
         }
-        public void CreateGoal(SimpleGoal goal)
+        
+        public void CreateGoal(string userInput2)
         {
-            /*Console.WriteLine("What is the name of your goal? ");
-            var shortName = Console.ReadLine();
+          if (userInput2 == "1")
+          {
+            Console.WriteLine("What is the name of your goal? ");
+            string shortName = Console.ReadLine();
             Console.WriteLine("What is a short description of it? ");
-            var description = Console.ReadLine();
-            Console.WriteLine("What is the amount of points associated with this goal? ");  //50
-            var points = Convert.ToInt32(Console.ReadLine()); */
+            string description = Console.ReadLine();
+            Console.WriteLine("What is the amount of points associated with this goal? ");  
+            int points = Convert.ToInt32(Console.ReadLine());
 
-            //List<Goal> _goals = new List<Goal> (_shortName, _description, _points);//   //Then add the goal info to the list
-           
-            //Goal newGoal = new Goal(shortName, description, points);
-            _goals.Add(goal);
-            //GoalManager goalManager = new GoalManager(goal, score);
-        } 
+            Goal goal1 = new SimpleGoal(shortName, description, points);
+            
+            _goals.Add(goal1);
 
+          }
+            
+          else if (userInput2 == "2")
+          {
+            Console.WriteLine("What is the name of your goal? ");
+            string shortName = Console.ReadLine();
+            Console.WriteLine("What is a short description of it? ");
+            string description = Console.ReadLine();
+            Console.WriteLine("What is the amount of points associated with this goal? ");  
+            int points = Convert.ToInt32(Console.ReadLine()); 
+          
+            Goal goal2 = new EternalGoal(shortName, description, points);
+            
+            _goals.Add(goal2);
+          }
+          else 
+            {
+                Console.WriteLine("Please select a type of goal from the menu ");
+            } 
+            
+
+                    
+            //Goal goal1 = new SimpleGoal(shortName, description, points);
+            
+            //_goals.Add(goal1);
+           // GoalManager goalManager = new GoalManager(_goals, _score);  //   //Then add the goal info to the list
+        }
 
         public void RecordEvent()
         {
-
+            
+           /* if(_isComplete == true)
+            {
+               Console.WriteLine(_points);
+               //Console.WriteLine(GetPoints());
+            }*/
         }
         public void SaveGoals(string filename)
         {
@@ -107,6 +136,25 @@ namespace EternalQuest
             //Goal.LoadGoals(loadFileName);         //?
 
         }
+
+        /*public void CreateGoal(SimpleGoal goal)
+        {
+            Console.WriteLine("What is the name of your goal? ");
+            var shortName = Console.ReadLine();
+            Console.WriteLine("What is a short description of it? ");
+            var description = Console.ReadLine();
+            Console.WriteLine("What is the amount of points associated with this goal? ");  //50
+            var points = Convert.ToInt32(Console.ReadLine()); */
+
+            //List<Goal> _goals = new List<Goal> (_shortName, _description, _points);//   //Then add the goal info to the list
+           
+            //Goal newGoal = new Goal(shortName, description, points);
+            //_goals.Add(goal);//
+            //GoalManager goalManager = new GoalManager(goal, score);
+        
+        
+
+
     }
 }
 
