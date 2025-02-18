@@ -46,23 +46,34 @@ namespace EternalQuest
         }
         public void ListGoalNames()
         {
+            int iterator = 1;
             foreach (var eachGoal in _goals)
             {
-                Console.WriteLine(eachGoal.GetShortName());
-                //Console.WriteLine(eachGoal._shortName);
+                Console.WriteLine($"{iterator}. {eachGoal.GetShortName()}");
+                iterator++;
             }
             //Lists the names of each of the goals.
-            // list _shortName
         }
         public void ListGoalDetails()
         {
             //Lists the details of each goal (including the checkbox of whether it is complete).
 
             Console.WriteLine ("The goals are: ");
-            //Console.WriteLine ($"   {_shortName} ({_description})");
+            string goalLine = "";
             foreach (var eachGoal in _goals)
             {
-                Console.WriteLine ($"   {eachGoal.GetShortName()} ({eachGoal.GetDescription()})");
+                if (eachGoal.IsComplete())
+                {
+                    goalLine = "[x] ";
+                }
+                else
+                {
+                    goalLine = "[ ] ";
+                }
+               //goalLine += $"   {eachGoal.GetShortName()} ({eachGoal.GetDescription()})";
+                goalLine += eachGoal.GetDetailsString();
+                //Console.WriteLine ($"   {eachGoal.GetShortName()} ({eachGoal.GetDescription()})");'
+                Console.WriteLine(goalLine);
             }
             //The goals are:
             //1. [ ] Give a talk (Speak in Sacrament meeting when asked)
@@ -86,7 +97,6 @@ namespace EternalQuest
             _goals.Add(goal1);
 
           }
-            
           else if (userInput2 == "2")
           {
             Console.WriteLine("What is the name of your goal? ");
@@ -95,32 +105,61 @@ namespace EternalQuest
             string description = Console.ReadLine();
             Console.WriteLine("What is the amount of points associated with this goal? ");  
             int points = Convert.ToInt32(Console.ReadLine()); 
-          
-            Goal goal2 = new EternalGoal(shortName, description, points);
             
-            _goals.Add(goal2);
           }
-          else 
-            {
-                Console.WriteLine("Please select a type of goal from the menu ");
-            } 
-            
 
-                    
-            //Goal goal1 = new SimpleGoal(shortName, description, points);
+          else if (userInput2 == "3")
+          {
+            Console.WriteLine("What is the name of your goal? ");
+            string shortName = Console.ReadLine();
+            Console.WriteLine("What is a short description of it? ");
+            string description = Console.ReadLine();
+            Console.WriteLine("What is the amount of points associated with this goal? ");  
+            int points = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many times does this goal need to be accomplished for a bonus? ");
+            int target = Convert.ToInt32(Console.ReadLine()); 
+            Console.WriteLine("What is the bonus for accomplishing it that many times? ");
+            int bonus = Convert.ToInt32(Console.ReadLine()); 
+
+            Goal goal3 = new ChecklistGoal(shortName, description, points, target, bonus);
             
-            //_goals.Add(goal1);
-           // GoalManager goalManager = new GoalManager(_goals, _score);  //   //Then add the goal info to the list
-        }
+            _goals.Add(goal3);
+            //CheckListGoal(name : string, description : string, points : int, target : int, bonus : int) 
+           
+          }  
+          
+          else 
+        {
+            Console.WriteLine("Please select a type of goal from the menu ");
+        } 
+            
+    }
+                    
+            
 
         public void RecordEvent()
         {
-            
-           /* if(_isComplete == true)
+            ListGoalNames();
+            Console.WriteLine ("Which goal did you accomplish? ");
+            var userInput = Convert.ToInt32(Console.ReadLine());
+            _goals[userInput-1].RecordEvent();              //index starts with 0, so minus 1
+            var totalPoints = 0;
+            foreach(var eachGoal in _goals)
             {
-               Console.WriteLine(_points);
-               //Console.WriteLine(GetPoints());
-            }*/
+                if(eachGoal.IsComplete() == true)
+                {
+                    totalPoints += eachGoal.GetPoints();
+                }
+            }
+            Console.WriteLine($"Congratulations! You have earned {totalPoints} points!");
+            //score += totalPoints;
+            //Console.WriteLine($"You now have {score} points.");
+
+            // if(_isComplete == true)
+            // {
+            //    Console.WriteLine(_points);
+            //    //Console.WriteLine(GetPoints());
+            // }
         }
         public void SaveGoals(string filename)
         {

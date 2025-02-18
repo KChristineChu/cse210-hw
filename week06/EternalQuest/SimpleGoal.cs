@@ -15,12 +15,12 @@ namespace EternalQuest
 
         public override void RecordEvent()
         {
-            if(_isComplete == true)
-            {
-               Console.WriteLine(_points);
-               //Console.WriteLine(GetPoints());
-            }
-                
+            _isComplete = true;
+            return;
+            // {
+            //    Console.WriteLine(_points);
+            //    //Console.WriteLine(GetPoints());
+            // }  
         }
        public override bool IsComplete()
         {

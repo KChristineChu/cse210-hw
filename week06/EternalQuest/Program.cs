@@ -12,7 +12,9 @@ namespace EternalQuest
             GoalManager goalManager = new GoalManager(goal, score);
             while(true)
             {
-                //Start();                              //Console.WriteLine("You have   points.");
+                //Start();
+                Console.WriteLine("");                              
+                Console.WriteLine($"You have {score}  points.");
                 Console.WriteLine("");
                 
                 Console.WriteLine("Menu Options: ");
@@ -29,7 +31,8 @@ namespace EternalQuest
 
                 if (userInput1 == "1")
                 {
-                   
+                    while(true)
+                    {
                         Console.WriteLine("The types of Goals are: ");
 
                         Console.WriteLine("1. Simple Goal");
@@ -38,27 +41,17 @@ namespace EternalQuest
 
                         Console.Write("What type of goal would you like to create? ");
                         string userInput2 = Console.ReadLine();
-
-
-
-                        //if (userInput2 == "1")
-                        //{
-                            /*Console.WriteLine("What is the name of your goal? ");
-                            var shortSimpleName = Console.ReadLine();
-                            Console.WriteLine("What is a short description of it? ");
-                            var simpleDescription = Console.ReadLine();
-                            Console.WriteLine("What is the amount of points associated with this goal? ");  
-                            var simplePoints = Convert.ToInt32(Console.ReadLine());   
-           
-                            SimpleGoal newSimpleGoal = new SimpleGoal(shortSimpleName, simpleDescription, simplePoints);*/
-                            //goalManager.CreateGoal(newSimpleGoal);
-                            goalManager.CreateGoal(userInput2);
-                        }
-                        //else if (userInput2 == "2")
-                        //{
-                            //goalManager.CreateGoal();
-                            //EternalGoal eternalGoal = new EternalGoal ("", "", 0);
-                        //}
+                        // if (userInput2 != "1" || userInput2 != "2" || userInput2 != "3")
+                        // {
+                        //     continue;
+                        // }
+                        
+                        goalManager.CreateGoal(userInput2);
+                        goalManager.ListGoalDetails();
+                        break;
+                        
+                    }
+                        
                         //else if (userInput2 == "3")
                         //{
                             //CreateGoal();
@@ -74,14 +67,14 @@ namespace EternalQuest
                         }*/
                     
 
-               // }
+                }
 
                 else if (userInput1 == "2")
                 {
-                    Console.WriteLine ("The goals are: ");
-                    //IsComplete();                          //on one line
+                    //Console.WriteLine ("The goals are: ");
+                    //IsComplete(); \n                         //both on one line
                     //ListGoalNames();
-                    //ListGoalDetails();
+                    goalManager.ListGoalDetails();
                 }
 
                 else if (userInput1 == "3")
@@ -98,7 +91,7 @@ namespace EternalQuest
 
                 else if (userInput1 == "5")
                 {
-
+                    goalManager.RecordEvent();
                 }
 
                 else if (userInput1 == "6")

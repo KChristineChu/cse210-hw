@@ -57,7 +57,7 @@ namespace EternalQuest
 
     public virtual string GetDetailsString()                 // abstract? - no
     {
-        return "";
+        return $" {_shortName} ({_description})";
     }
     public abstract string GetStringRepresentation();
     
@@ -66,16 +66,4 @@ namespace EternalQuest
 }
 
 
-/*
-Same set of questions for option 1 choice 1 Simple Goal, 2 Eternal 3 Checklist: Each reply will be stored
-Console.WriteLine("What is the name of your goal? ")
-_shortName = Console.ReadLine();
-Console.WriteLine("What is a short description of it? ")
-_description = Console.ReadLine();
-Console.WriteLine("What is the amount of points associated with this goal? ");  50
-_points = Console.ReadLine();
-Console.WriteLine ("How many times does this goal need to be accomplished for a bonus? "); 3
-_number = Console.ReadLine();
-Console.WriteLine ("What is the bonus for accomplishing it that many times? ); 500
-_bonusPoints = Console.ReadLine();
-*/
+

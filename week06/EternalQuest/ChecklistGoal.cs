@@ -1,5 +1,5 @@
 using System;
-/*
+
 namespace EternalQuest
 {
     
@@ -9,7 +9,6 @@ namespace EternalQuest
         protected int _amountCompleted;
         protected int _target;
         protected int _bonus;
-
         protected bool _isComplete;
 
         public ChecklistGoal (string name="", string description="", int points=0, int target=0, int bonus=0, bool _isComplete=false) : base (name, description, points)
@@ -38,6 +37,8 @@ namespace EternalQuest
             //_target = Console.ReadLine();
             //Console.WriteLine ("What is the bonus for accomplishing it that many times? ");       //500
             //_bonusPoints = Console.ReadLine();    
+            // if amount == target
+            //  getBonus = True;
 
         } 
     
@@ -56,7 +57,8 @@ namespace EternalQuest
         
         public override string GetDetailsString()
         {
-            return $"{_isComplete} {_shortName} ({_description})";    // plus the number of times the goal has been accomplished so far.
+            //return $"{_isComplete} {_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";    // plus the number of times the goal has been accomplished so far.
+            return $" {_shortName} {_description} -- Currently completed: {_amountCompleted}/{_target}";
         }
         public override string GetStringRepresentation()
         {
@@ -73,4 +75,4 @@ namespace EternalQuest
 
 
 
-*/
+
