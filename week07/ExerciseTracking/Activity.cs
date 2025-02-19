@@ -4,8 +4,17 @@ using System.Data;
 
 public abstract class Activity
     {
-        protected DateTime _date;
-        protected int _duration;
+        private DateTime _date;
+        private int _duration;
+
+        public DateTime Date
+        {
+            get{return _date;}
+        }
+        public int Duration
+        {
+            get{return _duration;}
+        }
 
         public Activity (DateTime date, int duration)
         {
@@ -17,6 +26,11 @@ public abstract class Activity
 
         public abstract float GetSpeed();
         public abstract float GetPace();
+
+        public string GetSummary()
+        {
+            return "";
+        }
         
     }    
     

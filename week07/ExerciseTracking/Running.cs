@@ -2,7 +2,9 @@ using System;
 
 public class Running : Activity
 {
-    protected float _distance;
+    private float _distance;
+
+
      
     public Running(DateTime date, int duration, float distance): base (date, duration)
     {
@@ -11,14 +13,14 @@ public class Running : Activity
 
     public override float GetDistance()
     {
-        return 0;              //add later
+        return _distance;             
     }
     public override float GetPace()
     {
-        return 0;
+        return Duration / _distance;
     }
     public override float GetSpeed()
     {
-        return 0;
+        return _distance / Duration * 60;
     }
 }
