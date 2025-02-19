@@ -9,6 +9,10 @@ namespace EternalQuest
     {
         protected List<Goal> _goals;
         protected int _score;
+        protected string saveFileName;
+        protected string loadFileName;
+
+       
 
         public GoalManager (List<Goal> goals, int score)
         {
@@ -26,6 +30,9 @@ namespace EternalQuest
         public void Start()
         {
             _score = 0;
+
+            
+           
             //Console.Write ($"You have {_score.DisplayPlayerInfo()} points." );
 
         }
@@ -50,13 +57,14 @@ namespace EternalQuest
             foreach (var eachGoal in _goals)
             {
                 Console.WriteLine($"{iterator}. {eachGoal.GetShortName()}");
+                //Console.WriteLine($"{iterator}. {eachGoal._shortName}");
                 iterator++;
             }
-            //Lists the names of each of the goals.
+            
         }
         public void ListGoalDetails()
         {
-            //Lists the details of each goal (including the checkbox of whether it is complete).
+            
 
             Console.WriteLine ("The goals are: ");
             string goalLine = "";
@@ -70,9 +78,9 @@ namespace EternalQuest
                 {
                     goalLine = "[ ] ";
                 }
-               //goalLine += $"   {eachGoal.GetShortName()} ({eachGoal.GetDescription()})";
+               
                 goalLine += eachGoal.GetDetailsString();
-                //Console.WriteLine ($"   {eachGoal.GetShortName()} ({eachGoal.GetDescription()})");'
+                
                 Console.WriteLine(goalLine);
             }
             //The goals are:
@@ -106,6 +114,9 @@ namespace EternalQuest
             Console.WriteLine("What is the amount of points associated with this goal? ");  
             int points = Convert.ToInt32(Console.ReadLine()); 
             
+            Goal goal2 = new EternalGoal(shortName, description, points);
+            
+            _goals.Add(goal2);
           }
 
           else if (userInput2 == "3")
@@ -124,8 +135,7 @@ namespace EternalQuest
             Goal goal3 = new ChecklistGoal(shortName, description, points, target, bonus);
             
             _goals.Add(goal3);
-            //CheckListGoal(name : string, description : string, points : int, target : int, bonus : int) 
-           
+            
           }  
           
           else 
@@ -139,7 +149,7 @@ namespace EternalQuest
 
         public void RecordEvent()
         {
-            ListGoalNames();
+            //ListGoalNames();
             Console.WriteLine ("Which goal did you accomplish? ");
             var userInput = Convert.ToInt32(Console.ReadLine());
             _goals[userInput-1].RecordEvent();              //index starts with 0, so minus 1
@@ -155,27 +165,75 @@ namespace EternalQuest
             //score += totalPoints;
             //Console.WriteLine($"You now have {score} points.");
 
-            // if(_isComplete == true)
-            // {
-            //    Console.WriteLine(_points);
-            //    //Console.WriteLine(GetPoints());
+            
             // }
         }
-        public void SaveGoals(string filename)
+        public void SaveGoals()     //(string filename)
         {
-            Console.WriteLine ("What is the filename for the goal file? ");
-            string savefileName = Console.ReadLine();
-            //Goal.SaveGoals(saveFileName);        //?
+            Console.Write ("What is the filename for the goal file? ");
+            string saveFileName = Console.ReadLine();
+            
+            using(StreamWriter writer = new StreamWriter(saveFileName))
+            {
+                foreach (var goal in _goals)
+                {
+                    writer.WriteLine(goal.ToCsvString());
+                }
+            }
+            Console.WriteLine($"Your file has been saved with the name {saveFileName}");
+            
+            
         }
-        public void LoadGoals(string filename)
+        public void LoadGoals()
         {
             Console.Write("Enter the filename to load from: ");
-            //Console.Write("LoadGoal method");
             string loadFileName = Console.ReadLine();
+
+            if (loadFileName == saveFileName)
+            {
+              ListGoalDetails(); 
+              //Console.WriteLine(ListGoalDetails()); 
+            }
+            else
+            {
+                Console.Write("Enter the correct filename: ");
+            }
+            //Console.Write(LoadGoal());
+            //string loadFileName = Console.ReadLine();
             //Goal.LoadGoals(loadFileName);         //?
 
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         /*public void CreateGoal(SimpleGoal goal)
         {
             Console.WriteLine("What is the name of your goal? ");

@@ -18,30 +18,28 @@ namespace EternalQuest
         _description = description;
         _points = points;
     }
+
+    public string ToCsvString()
+    {
+        return $"{GetType().Name}, {_shortName}, {_description}, {_points}";
+    }
+
+
     public string GetShortName()
     {
         return _shortName;
     }
-    public void SetShortName(string shortName)
-    {
-        _shortName = shortName;
-    }
+    
     public string GetDescription()
     {
         return _description;
     }
-    public void SetDescription(string description)
-    {
-        _description = description;
-    }
+    
     public int GetPoints()
     {
         return _points;
     }
-    public void SetPoints(int points)
-    {
-        _points = points;
-    }
+    
 
     
 
@@ -52,8 +50,7 @@ namespace EternalQuest
 
 
     public abstract bool IsComplete();
-    //This method should return true if the goal is completed. 
-    //The way you determine if a goal is complete is different for each type of goal.
+    
 
     public virtual string GetDetailsString()                 // abstract? - no
     {

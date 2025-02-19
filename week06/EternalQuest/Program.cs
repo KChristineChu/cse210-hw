@@ -2,7 +2,7 @@ using System;
 
 namespace EternalQuest
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -41,50 +41,30 @@ namespace EternalQuest
 
                         Console.Write("What type of goal would you like to create? ");
                         string userInput2 = Console.ReadLine();
-                        // if (userInput2 != "1" || userInput2 != "2" || userInput2 != "3")
-                        // {
-                        //     continue;
-                        // }
+                        
                         
                         goalManager.CreateGoal(userInput2);
-                        goalManager.ListGoalDetails();
+                        //goalManager.ListGoalDetails();
                         break;
                         
                     }
-                        
-                        //else if (userInput2 == "3")
-                        //{
-                            //CreateGoal();
-
-                            //RecordEvent();
-
-                            //ChecklistGoal checklistGoal = new ChecklistGoal ("", "", 0, 0, 0);
-                        /*
-                        }
-                        else 
-                        {
-                            Console.WriteLine("Please select a type of goal from the menu ");
-                        }*/
-                    
-
-                }
+                }       
+            
 
                 else if (userInput1 == "2")
                 {
-                    //Console.WriteLine ("The goals are: ");
-                    //IsComplete(); \n                         //both on one line
-                    //ListGoalNames();
+                    
                     goalManager.ListGoalDetails();
                 }
 
                 else if (userInput1 == "3")
                 {
-                    //SaveGoals();
+                    goalManager.SaveGoals();
                 }
 
                 else if (userInput1 == "4")
                 {
-                    //LoadGoals();
+                    goalManager.LoadGoals();
                 
 
                 }

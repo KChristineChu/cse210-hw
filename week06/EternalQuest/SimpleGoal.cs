@@ -17,10 +17,7 @@ namespace EternalQuest
         {
             _isComplete = true;
             return;
-            // {
-            //    Console.WriteLine(_points);
-            //    //Console.WriteLine(GetPoints());
-            // }  
+             
         }
        public override bool IsComplete()
         {
@@ -37,11 +34,3 @@ namespace EternalQuest
     }
 }
 
-/*if (_isComplete == false)                              
-            {
-                Console.Write("[ ]");
-            }
-            else
-            {
-                Console.Write("[x]");
-            }*/
