@@ -12,11 +12,9 @@ namespace EternalQuest
             GoalManager goalManager = new GoalManager(goal, score);
             while(true)
             {
-                //Start();
-                Console.WriteLine("");                              
-                Console.WriteLine($"You have {score}  points.");
-                Console.WriteLine("");
-                
+                Console.WriteLine();
+                goalManager.Start();
+                Console.WriteLine();                
                 Console.WriteLine("Menu Options: ");
 
                 Console.WriteLine("1. Create New Goal");
@@ -44,7 +42,7 @@ namespace EternalQuest
                         
                         
                         goalManager.CreateGoal(userInput2);
-                        //goalManager.ListGoalDetails();
+                        
                         break;
                         
                     }

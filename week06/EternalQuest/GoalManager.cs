@@ -31,23 +31,22 @@ namespace EternalQuest
         {
             _score = 0;
 
-            
-           
+            Console.WriteLine ($"You have {_score} points." );
             //Console.Write ($"You have {_score.DisplayPlayerInfo()} points." );
-
+            
         }
         public void DisplayPlayerInfo()
         {
             //Displays the players current score.
-           /*foreach (int point in _points)
+           /*foreach (int point in Getpoints())
             {
                 _score += point;
 
             } */
             
             
-            ListGoalNames();
-            ListGoalDetails();
+            //ListGoalNames();
+            //ListGoalDetails();
 
 
         }
@@ -198,9 +197,8 @@ namespace EternalQuest
             {
                 Console.Write("Enter the correct filename: ");
             }
-            //Console.Write(LoadGoal());
-            //string loadFileName = Console.ReadLine();
-            //Goal.LoadGoals(loadFileName);         //?
+            
+            
 
         }
 
