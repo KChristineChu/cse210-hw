@@ -29,7 +29,7 @@ public abstract class Activity
 
         public string GetSummary()
         {
-            return "";
+            return $"{_date.ToString("dd MMM yyyy")} ({Duration} min) - Distance {GetDistance()} km, Speed: {GetSpeed()} kph, Pace: {GetPace()} min per km";
         }
         
     }    

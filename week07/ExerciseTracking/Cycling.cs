@@ -11,15 +11,15 @@ public class Cycling : Activity
 
     public override float GetDistance()
     {
-        return 0;
+        return _speed * Duration / 60;
     }
     public override float GetSpeed()
     {
-        return 0;
+        return _speed;
     }
     public override float GetPace()
     {
-        return 0;
+        return 60 / _speed;
     }
 
 }
