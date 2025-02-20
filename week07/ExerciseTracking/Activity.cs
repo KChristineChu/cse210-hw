@@ -27,9 +27,14 @@ public abstract class Activity
         public abstract float GetSpeed();
         public abstract float GetPace();
 
+        public virtual string GetActivityName()
+        {
+            return "Activity";
+        }
+
         public string GetSummary()
         {
-            return $"{_date.ToString("dd MMM yyyy")} ({Duration} min) - Distance {GetDistance():0.0} km, Speed: {GetSpeed():0.0} kph, Pace: {GetPace():0.0} min per km";
+            return $"{_date.ToString("dd MMM yyyy")} {GetActivityName()} ({Duration} min) - Distance {GetDistance():0.0} km, Speed: {GetSpeed():0.0} kph, Pace: {GetPace():0.0} min per km";
         }
         
     }    

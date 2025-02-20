@@ -20,4 +20,9 @@ public class Swimming : Activity
     {
         return Duration / GetDistance();
     }
+    public override string GetActivityName()
+        {
+            return "Swimming";
+        }
+
 }

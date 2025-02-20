@@ -21,5 +21,9 @@ public class Cycling : Activity
     {
         return 60 / _speed;
     }
+    public override string GetActivityName()
+        {
+            return "Cycling";
+        }
 
 }

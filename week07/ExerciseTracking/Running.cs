@@ -28,4 +28,8 @@ public class Running : Activity
     {
         return _distance / Duration * 60;     
     }
+    public override string GetActivityName()
+        {
+            return "Running";
+        }
 }
