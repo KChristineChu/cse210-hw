@@ -27,10 +27,8 @@ public abstract class Activity
         public abstract float GetSpeed();
         public abstract float GetPace();
 
-        public virtual string GetActivityName()
-        {
-            return "Activity";
-        }
+        public abstract string GetActivityName();
+
 
         public string GetSummary()
         {
