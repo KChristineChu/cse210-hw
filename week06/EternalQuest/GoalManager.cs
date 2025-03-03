@@ -188,15 +188,17 @@ namespace EternalQuest
             Console.Write("Enter the filename to load from: ");
             string loadFileName = Console.ReadLine();
 
-            if (loadFileName == saveFileName)
+            if (loadFileName != saveFileName)
+            {
+                Console.Write("Enter the correct filename: ");
+            }
+            else
             {
               ListGoalDetails(); 
               //Console.WriteLine(ListGoalDetails()); 
             }
-            else
-            {
-                Console.Write("Enter the correct filename: ");
-            }
+            
+            
             
             
 

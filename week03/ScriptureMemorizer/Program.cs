@@ -21,6 +21,7 @@ class Program
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
             
+            Console.WriteLine();
             Console.WriteLine("Press enter key to continue or type 'quit' to end");
             userInput = Console.ReadLine();
 
